@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { CheckCircle, BrainCircuit, Globe, Users, Palette } from 'lucide-react';
+import Link from 'next/link';
 
 const AiConsultingPage = () => {
   return (
@@ -179,10 +180,11 @@ const AiConsultingPage = () => {
         <p className="text-emerald-100 mb-8 max-w-xl mx-auto">
           無料相談をご希望のお客様は下記フォームより必要事項をご記入の上お送りください。
         </p>
-        {/* TODO: お問い合わせフォームへのリンク or 埋め込み */}
-        <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
-          無料相談フォームへ
-        </Button>
+        <div className="flex justify-center space-x-4">
+          <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
+            <Link href="/free-consultation">無料相談フォームへ</Link>
+          </Button>
+        </div>
       </section>
     </div>
   );

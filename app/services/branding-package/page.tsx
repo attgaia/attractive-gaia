@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { CheckCircle, Palette, Sparkles, Layers, MessageCircle, FileText, Video, Globe } from 'lucide-react';
+import { ContactForm } from "@/components/contact-form"
 
 const BrandingPackagePage = () => {
   return (
@@ -101,21 +102,64 @@ const BrandingPackagePage = () => {
         </div>
       </section>
 
-      {/* ご利用の流れセクション (他サービスページと同様) */}
-      <section className="mb-16 md:mb-24 bg-gray-100 rounded-lg p-8 md:p-12">
-         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">制作プロセス</h2>
-         {/* ... (ヒアリング → コンセプト提案 → デザイン制作 → 確認・修正 → 納品) ... */}
-         <p className="text-center text-gray-500">(ここに「ご利用の流れ」セクションが入ります - 内容は他と同様)</p>
-       </section>
+      {/* 制作プロセス */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">制作プロセス</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* ステップ1 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center justify-center w-12 h-12 bg-emerald-500 text-white rounded-full mb-4">
+                <span className="text-xl font-bold">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">ヒアリング</h3>
+              <p className="text-gray-600">
+                お客様のビジョンや目標、ターゲット層などを詳しくヒアリングし、ブランド戦略の方向性を決定します。
+              </p>
+            </div>
 
-      {/* CTAセクション (他サービスページと同様) */}
+            {/* ステップ2 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center justify-center w-12 h-12 bg-emerald-500 text-white rounded-full mb-4">
+                <span className="text-xl font-bold">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">コンセプト設計</h3>
+              <p className="text-gray-600">
+                ヒアリング内容を基に、ブランドの核となるコンセプトを設計し、ロゴやカラーパレットなどの基本要素を決定します。
+              </p>
+            </div>
+
+            {/* ステップ3 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center justify-center w-12 h-12 bg-emerald-500 text-white rounded-full mb-4">
+                <span className="text-xl font-bold">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">デザイン制作</h3>
+              <p className="text-gray-600">
+                決定したコンセプトに基づき、ロゴ、カラーパレット、タイポグラフィなどのデザイン要素を制作します。
+              </p>
+            </div>
+
+            {/* ステップ4 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center justify-center w-12 h-12 bg-emerald-500 text-white rounded-full mb-4">
+                <span className="text-xl font-bold">4</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">ガイドライン作成</h3>
+              <p className="text-gray-600">
+                制作したデザイン要素の使用方法や、ブランドの表現方法をまとめたガイドラインを作成します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTAセクション */}
       <section className="text-center bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-10 md:p-16">
         <h2 className="text-3xl font-bold text-white mb-6">ブランド構築に関するご相談はこちら</h2>
-        {/* ... */}
-        <p className="text-center text-emerald-100 mb-8">(ここにCTAセクションが入ります - 内容は他と同様)</p>
-        <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
-          無料相談フォームへ
-        </Button>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 md:p-12">
+          <ContactForm />
+        </div>
       </section>
     </div>
   );

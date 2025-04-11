@@ -4,9 +4,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
-import { CheckCircle2, Users, MessageSquare, BarChart2, Target, Award } from "lucide-react"
+import { CheckCircle2, Ship, Globe, FileText, ShoppingCart, TrendingUp } from "lucide-react"
 
-export default function RecruitmentConsultingPage() {
+export default function ImportConsultingPage() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-1">
@@ -20,15 +20,15 @@ export default function RecruitmentConsultingPage() {
               className="text-center"
             >
               <Badge className="mb-6 bg-emerald-400/20 text-emerald-100 hover:bg-emerald-400/30 border-emerald-400/30 backdrop-blur-sm">
-                採用コンサルティング
+                輸入コンサルティング
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-                採用ターゲットに響く<br />
-                効果的な採用戦略を提案
+                海外製品の輸入ビジネスを<br />
+                トータルでサポート
               </h1>
               <p className="text-lg md:text-xl text-emerald-100 mb-10 max-w-3xl mx-auto">
-                求人ページの制作から採用戦略の立案まで、<br />
-                あなたの会社に最適な人材を獲得するためのサポートを提供します。
+                主にインドネシア・米国からの輸入ビジネスを支援。<br />
+                海外製品の調達から輸入手続き、販売戦略までをトータルでサポートします。
               </p>
             </motion.div>
           </div>
@@ -48,11 +48,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <Users className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">求人ページ制作</h3>
+                    <Globe className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">海外サプライヤー開拓</h3>
                   </div>
                   <p className="text-gray-600">
-                    自社の魅力を最大限に伝える求人ページを制作します。ターゲット層に響くデザインとコピーライティングで、応募率の向上をサポートします。
+                    インドネシア・米国を中心に、信頼性の高いサプライヤーを開拓します。品質管理や価格交渉もサポートします。
                   </p>
                 </motion.div>
 
@@ -63,11 +63,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <MessageSquare className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">採用戦略コンサルティング</h3>
+                    <Ship className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">輸入手続きサポート</h3>
                   </div>
                   <p className="text-gray-600">
-                    業界動向や競合分析を基に、効果的な採用戦略を提案します。採用プロセスの改善や採用ツールの選定もサポートします。
+                    通関手続きや輸送手配、輸入規制の確認など、輸入に必要な手続きを一貫してサポートします。
                   </p>
                 </motion.div>
 
@@ -78,11 +78,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <BarChart2 className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">採用効果分析</h3>
+                    <FileText className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">法規制対応</h3>
                   </div>
                   <p className="text-gray-600">
-                    採用活動の効果を定量的・定性的に分析し、改善点を提案します。データに基づいた採用戦略の最適化をサポートします。
+                    輸入規制や認証取得、知的財産権の確認など、法規制に関するアドバイスを提供します。
                   </p>
                 </motion.div>
 
@@ -93,11 +93,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <Target className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">ターゲット層分析</h3>
+                    <ShoppingCart className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">販売戦略支援</h3>
                   </div>
                   <p className="text-gray-600">
-                    求職者の属性や行動特性を分析し、効果的なアプローチ方法を提案します。採用ターゲットの明確化と最適な採用チャネルの選定をサポートします。
+                    市場分析や価格設定、販売チャネルの開拓など、輸入品の販売戦略をサポートします。
                   </p>
                 </motion.div>
               </div>
@@ -109,27 +109,27 @@ export default function RecruitmentConsultingPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">カスタマイズされた提案</h4>
+                      <h4 className="font-semibold mb-2">現地ネットワーク</h4>
                       <p className="text-gray-600">
-                        業種や企業規模、採用ポジションに応じて、最適な採用戦略をカスタマイズして提案します。
+                        インドネシア・米国に現地スタッフを配置し、信頼性の高いサプライヤーとのネットワークを構築しています。現地での品質チェックも可能です。
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">データドリブンなアプローチ</h4>
+                      <h4 className="font-semibold mb-2">リスク管理</h4>
                       <p className="text-gray-600">
-                        採用データの分析に基づき、効果的な採用戦略を立案します。定量的な指標で採用活動の改善をサポートします。
+                        為替リスクや輸送リスク、品質リスクなど、輸入ビジネスに伴う様々なリスクを最小限に抑えるための対策を提案します。
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">継続的なサポート</h4>
+                      <h4 className="font-semibold mb-2">ワンストップサポート</h4>
                       <p className="text-gray-600">
-                        採用活動の開始から定着まで、一貫したサポートを提供します。定期的な進捗確認と戦略の見直しを行います。
+                        サプライヤー開拓から販売まで、輸入ビジネスの全プロセスを一貫してサポートします。各段階での専門家との連携により、スムーズな輸入を実現します。
                       </p>
                     </div>
                   </div>
@@ -146,10 +146,10 @@ export default function RecruitmentConsultingPage() {
                     transition={{ duration: 0.5 }}
                     className="bg-gray-50 p-6 rounded-lg"
                   >
-                    <Award className="w-8 h-8 text-emerald-600 mb-4" />
-                    <h4 className="font-semibold mb-2">IT企業のエンジニア採用</h4>
+                    <TrendingUp className="w-8 h-8 text-emerald-600 mb-4" />
+                    <h4 className="font-semibold mb-2">インドネシア産食品の輸入</h4>
                     <p className="text-gray-600">
-                      求人ページの改善と採用プロセスの最適化により、応募者数が2倍に増加。採用コストも30%削減しました。
+                      現地サプライヤーの開拓から輸入、販売までをサポート。1年で売上を前年比300%に伸ばしました。
                     </p>
                   </motion.div>
                   <motion.div
@@ -158,10 +158,10 @@ export default function RecruitmentConsultingPage() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="bg-gray-50 p-6 rounded-lg"
                   >
-                    <Award className="w-8 h-8 text-emerald-600 mb-4" />
-                    <h4 className="font-semibold mb-2">小売業の店舗スタッフ採用</h4>
+                    <TrendingUp className="w-8 h-8 text-emerald-600 mb-4" />
+                    <h4 className="font-semibold mb-2">米国製健康食品の輸入</h4>
                     <p className="text-gray-600">
-                      ターゲット層に合わせた採用戦略の立案と実施により、採用期間を50%短縮。定着率も向上しました。
+                      輸入規制の確認から販売戦略までをサポート。ECサイトでの販売を中心に、月間売上1000万円を達成しました。
                     </p>
                   </motion.div>
                 </div>
@@ -171,9 +171,9 @@ export default function RecruitmentConsultingPage() {
               <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-8 text-white">
                 <div className="flex flex-col md:flex-row items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-bold mb-2">採用戦略の改善をお考えですか？</h3>
+                    <h3 className="text-xl font-bold mb-2">輸入ビジネスをお考えですか？</h3>
                     <p className="text-gray-100">
-                      無料相談で、あなたの会社に最適な採用戦略をご提案します。
+                      無料相談で、あなたのビジネスに最適な輸入戦略をご提案します。
                     </p>
                   </div>
                   <Button className="mt-4 md:mt-0 bg-white text-emerald-700 hover:bg-gray-100">
@@ -187,4 +187,4 @@ export default function RecruitmentConsultingPage() {
       </main>
     </div>
   )
-}
+} 

@@ -150,7 +150,7 @@ const VideoProductionPage = () => {
             LINEまたはお問い合わせフォームより、まずはご相談ください。<br />構成や台本づくりから、プロが伴走します。
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white shadow">
+            <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
               <MessageCircle className="mr-2 h-5 w-5" /> お問い合わせフォームへ
             </Button>
             <Button size="lg" variant="outline" className="border-green-500 text-green-600 hover:bg-green-50 hover:text-green-700">

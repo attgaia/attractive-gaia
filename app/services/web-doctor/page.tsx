@@ -149,7 +149,7 @@ const WebDoctorPage = () => {
             LINEまたはお問い合わせフォームより、お気軽にメッセージをお送りください。
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow">
+            <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
               <MessageCircle className="mr-2 h-5 w-5" /> お問い合わせフォームへ
             </Button>
             <Button size="lg" variant="outline" className="border-green-500 text-green-600 hover:bg-green-50">

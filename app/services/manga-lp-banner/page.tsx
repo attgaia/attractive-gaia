@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { BadgeCheck, Zap, MessageSquare, Eye, Heart, FileText, CheckSquare } from 'lucide-react';
+import { BadgeCheck, Zap, MessageSquare, Eye, Heart, FileText, CheckSquare, CheckCircle, Palette, Sparkles, Layers, MessageCircle, Video, Globe } from 'lucide-react';
+import { ContactForm } from "@/components/contact-form"
 
 const MangaLpBannerPage = () => {
   return (
@@ -178,10 +179,9 @@ const MangaLpBannerPage = () => {
           そんな方も大歓迎。まずは気軽にご相談ください！
           下記フォームより必要事項をご記入の上お送りください。
         </p>
-        {/* TODO: お問い合わせフォームへのリンク or 埋め込み */}
-        <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
-          お問い合わせフォームへ
-        </Button>
+        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 md:p-12">
+          <ContactForm />
+        </div>
       </section>
     </div>
   );

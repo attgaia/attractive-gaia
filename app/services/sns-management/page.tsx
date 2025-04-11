@@ -4,9 +4,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
-import { CheckCircle2, Users, MessageSquare, BarChart2, Target, Award } from "lucide-react"
+import { CheckCircle2, MessageSquare, BarChart2, Image, Video, TrendingUp } from "lucide-react"
 
-export default function RecruitmentConsultingPage() {
+export default function SNSManagementPage() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-1">
@@ -20,15 +20,15 @@ export default function RecruitmentConsultingPage() {
               className="text-center"
             >
               <Badge className="mb-6 bg-emerald-400/20 text-emerald-100 hover:bg-emerald-400/30 border-emerald-400/30 backdrop-blur-sm">
-                採用コンサルティング
+                SNS運用代行サービス
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-                採用ターゲットに響く<br />
-                効果的な採用戦略を提案
+                SNSの効果的な運用で<br />
+                ファン獲得と売上向上を実現
               </h1>
               <p className="text-lg md:text-xl text-emerald-100 mb-10 max-w-3xl mx-auto">
-                求人ページの制作から採用戦略の立案まで、<br />
-                あなたの会社に最適な人材を獲得するためのサポートを提供します。
+                Instagram、X、Facebook、TikTokなど各種SNSの運用を代行。<br />
+                コンテンツ制作から投稿、分析までトータルサポートします。
               </p>
             </motion.div>
           </div>
@@ -48,11 +48,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <Users className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">求人ページ制作</h3>
+                    <MessageSquare className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">コンテンツ制作</h3>
                   </div>
                   <p className="text-gray-600">
-                    自社の魅力を最大限に伝える求人ページを制作します。ターゲット層に響くデザインとコピーライティングで、応募率の向上をサポートします。
+                    ターゲット層に響く高品質なコンテンツを制作します。テキスト、画像、動画など、各SNSの特性に合わせた最適なコンテンツを提供します。
                   </p>
                 </motion.div>
 
@@ -63,11 +63,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <MessageSquare className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">採用戦略コンサルティング</h3>
+                    <Image className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">投稿管理</h3>
                   </div>
                   <p className="text-gray-600">
-                    業界動向や競合分析を基に、効果的な採用戦略を提案します。採用プロセスの改善や採用ツールの選定もサポートします。
+                    最適な投稿タイミングの設定と投稿スケジュール管理を行います。各SNSのアルゴリズムを考慮した効果的な投稿戦略を実践します。
                   </p>
                 </motion.div>
 
@@ -79,10 +79,10 @@ export default function RecruitmentConsultingPage() {
                 >
                   <div className="flex items-center mb-4">
                     <BarChart2 className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">採用効果分析</h3>
+                    <h3 className="text-xl font-semibold">データ分析</h3>
                   </div>
                   <p className="text-gray-600">
-                    採用活動の効果を定量的・定性的に分析し、改善点を提案します。データに基づいた採用戦略の最適化をサポートします。
+                    エンゲージメント率、リーチ数、フォロワー増加率などのKPIを定期的に分析。データに基づいた改善提案を行います。
                   </p>
                 </motion.div>
 
@@ -93,11 +93,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <Target className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">ターゲット層分析</h3>
+                    <Video className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">動画制作</h3>
                   </div>
                   <p className="text-gray-600">
-                    求職者の属性や行動特性を分析し、効果的なアプローチ方法を提案します。採用ターゲットの明確化と最適な採用チャネルの選定をサポートします。
+                    ReelsやTikTok向けのショート動画制作も対応可能。商品紹介や企業PRなど、目的に合わせた動画コンテンツを制作します。
                   </p>
                 </motion.div>
               </div>
@@ -109,27 +109,27 @@ export default function RecruitmentConsultingPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">カスタマイズされた提案</h4>
+                      <h4 className="font-semibold mb-2">プラットフォーム最適化</h4>
                       <p className="text-gray-600">
-                        業種や企業規模、採用ポジションに応じて、最適な採用戦略をカスタマイズして提案します。
+                        各SNSプラットフォームの特性を活かした最適な運用戦略を提案します。Instagram、X、Facebook、TikTokなど、目的に応じたプラットフォーム選定もサポートします。
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">データドリブンなアプローチ</h4>
+                      <h4 className="font-semibold mb-2">コンテンツ戦略</h4>
                       <p className="text-gray-600">
-                        採用データの分析に基づき、効果的な採用戦略を立案します。定量的な指標で採用活動の改善をサポートします。
+                        ブランドの価値観やターゲット層に合わせた一貫性のあるコンテンツ戦略を構築します。定期的なコンテンツカレンダーの作成と管理も行います。
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">継続的なサポート</h4>
+                      <h4 className="font-semibold mb-2">コミュニティ育成</h4>
                       <p className="text-gray-600">
-                        採用活動の開始から定着まで、一貫したサポートを提供します。定期的な進捗確認と戦略の見直しを行います。
+                        フォロワーとの積極的なコミュニケーションを通じて、強いファンコミュニティを育成します。コメントへの返信やDM対応も代行します。
                       </p>
                     </div>
                   </div>
@@ -146,10 +146,10 @@ export default function RecruitmentConsultingPage() {
                     transition={{ duration: 0.5 }}
                     className="bg-gray-50 p-6 rounded-lg"
                   >
-                    <Award className="w-8 h-8 text-emerald-600 mb-4" />
-                    <h4 className="font-semibold mb-2">IT企業のエンジニア採用</h4>
+                    <TrendingUp className="w-8 h-8 text-emerald-600 mb-4" />
+                    <h4 className="font-semibold mb-2">アパレルブランドのSNS運用</h4>
                     <p className="text-gray-600">
-                      求人ページの改善と採用プロセスの最適化により、応募者数が2倍に増加。採用コストも30%削減しました。
+                      InstagramとTikTokを中心とした運用で、フォロワー数が3倍に増加。商品の売上も前年比150%を達成しました。
                     </p>
                   </motion.div>
                   <motion.div
@@ -158,10 +158,10 @@ export default function RecruitmentConsultingPage() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="bg-gray-50 p-6 rounded-lg"
                   >
-                    <Award className="w-8 h-8 text-emerald-600 mb-4" />
-                    <h4 className="font-semibold mb-2">小売業の店舗スタッフ採用</h4>
+                    <TrendingUp className="w-8 h-8 text-emerald-600 mb-4" />
+                    <h4 className="font-semibold mb-2">飲食店のSNS活用</h4>
                     <p className="text-gray-600">
-                      ターゲット層に合わせた採用戦略の立案と実施により、採用期間を50%短縮。定着率も向上しました。
+                      新メニューのPR動画を中心としたSNS運用で、来店客数が2倍に増加。特に若年層の顧客獲得に成功しました。
                     </p>
                   </motion.div>
                 </div>
@@ -171,9 +171,9 @@ export default function RecruitmentConsultingPage() {
               <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-8 text-white">
                 <div className="flex flex-col md:flex-row items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-bold mb-2">採用戦略の改善をお考えですか？</h3>
+                    <h3 className="text-xl font-bold mb-2">SNS運用でお悩みですか？</h3>
                     <p className="text-gray-100">
-                      無料相談で、あなたの会社に最適な採用戦略をご提案します。
+                      無料相談で、あなたのビジネスに最適なSNS運用戦略をご提案します。
                     </p>
                   </div>
                   <Button className="mt-4 md:mt-0 bg-white text-emerald-700 hover:bg-gray-100">
@@ -187,4 +187,4 @@ export default function RecruitmentConsultingPage() {
       </main>
     </div>
   )
-}
+} 

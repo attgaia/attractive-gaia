@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { CheckCircle, ShoppingCart, TrendingUp, Settings, Target } from 'lucide-react';
+import Link from 'next/link';
 
 const EcConsultingPage = () => {
   return (
@@ -75,9 +76,11 @@ const EcConsultingPage = () => {
         <h2 className="text-3xl font-bold text-white mb-6">ECサイトの売上アップ・効率化のご相談</h2>
         {/* ... (内容は記事作成代行と同様のため省略) ... */}
         <p className="text-center text-emerald-100 mb-8">(ここにCTAセクションが入ります)</p>
-        <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
-          無料相談フォームへ
-        </Button>
+        <div className="flex justify-center space-x-4">
+          <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
+            <Link href="/free-consultation">無料相談フォームへ</Link>
+          </Button>
+        </div>
       </section>
     </div>
   );

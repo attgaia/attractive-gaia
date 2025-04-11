@@ -4,9 +4,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
-import { CheckCircle2, Users, MessageSquare, BarChart2, Target, Award } from "lucide-react"
+import { CheckCircle2, Lightbulb, Search, Box, ShoppingCart, TrendingUp } from "lucide-react"
 
-export default function RecruitmentConsultingPage() {
+export default function ProductDevelopmentPage() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-1">
@@ -20,15 +20,15 @@ export default function RecruitmentConsultingPage() {
               className="text-center"
             >
               <Badge className="mb-6 bg-emerald-400/20 text-emerald-100 hover:bg-emerald-400/30 border-emerald-400/30 backdrop-blur-sm">
-                採用コンサルティング
+                商品開発支援サービス
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-                採用ターゲットに響く<br />
-                効果的な採用戦略を提案
+                新商品開発の全プロセスを<br />
+                ワンストップでサポート
               </h1>
               <p className="text-lg md:text-xl text-emerald-100 mb-10 max-w-3xl mx-auto">
-                求人ページの制作から採用戦略の立案まで、<br />
-                あなたの会社に最適な人材を獲得するためのサポートを提供します。
+                OEMから販売サポートまで、市場調査からプロトタイプ開発、<br />
+                テスト販売まで、商品開発のあらゆる段階を支援します。
               </p>
             </motion.div>
           </div>
@@ -48,11 +48,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <Users className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">求人ページ制作</h3>
+                    <Search className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">市場調査・分析</h3>
                   </div>
                   <p className="text-gray-600">
-                    自社の魅力を最大限に伝える求人ページを制作します。ターゲット層に響くデザインとコピーライティングで、応募率の向上をサポートします。
+                    競合分析や市場動向の調査、ターゲット層のニーズ分析を行います。データに基づいた商品コンセプトの立案をサポートします。
                   </p>
                 </motion.div>
 
@@ -63,11 +63,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <MessageSquare className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">採用戦略コンサルティング</h3>
+                    <Lightbulb className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">商品企画・設計</h3>
                   </div>
                   <p className="text-gray-600">
-                    業界動向や競合分析を基に、効果的な採用戦略を提案します。採用プロセスの改善や採用ツールの選定もサポートします。
+                    市場調査結果を基に、具体的な商品コンセプトの立案と設計を行います。機能性とデザイン性を両立した商品開発をサポートします。
                   </p>
                 </motion.div>
 
@@ -78,11 +78,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <BarChart2 className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">採用効果分析</h3>
+                    <Box className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">プロトタイプ開発</h3>
                   </div>
                   <p className="text-gray-600">
-                    採用活動の効果を定量的・定性的に分析し、改善点を提案します。データに基づいた採用戦略の最適化をサポートします。
+                    3Dモデリングや試作制作を通じて、商品の実現可能性を検証します。機能テストやユーザビリティテストも実施します。
                   </p>
                 </motion.div>
 
@@ -93,11 +93,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <Target className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">ターゲット層分析</h3>
+                    <ShoppingCart className="w-6 h-6 text-emerald-600 mr-2" />
+                    <h3 className="text-xl font-semibold">販売サポート</h3>
                   </div>
                   <p className="text-gray-600">
-                    求職者の属性や行動特性を分析し、効果的なアプローチ方法を提案します。採用ターゲットの明確化と最適な採用チャネルの選定をサポートします。
+                    テスト販売の実施や販売チャネルの開拓、マーケティング戦略の立案まで、商品の販売を全面的にサポートします。
                   </p>
                 </motion.div>
               </div>
@@ -109,27 +109,27 @@ export default function RecruitmentConsultingPage() {
                   <div className="flex items-start">
                     <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">カスタマイズされた提案</h4>
+                      <h4 className="font-semibold mb-2">ワンストップサポート</h4>
                       <p className="text-gray-600">
-                        業種や企業規模、採用ポジションに応じて、最適な採用戦略をカスタマイズして提案します。
+                        市場調査から販売まで、商品開発の全プロセスを一貫してサポートします。各段階での専門家との連携により、スムーズな開発を実現します。
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">データドリブンなアプローチ</h4>
+                      <h4 className="font-semibold mb-2">データドリブンな開発</h4>
                       <p className="text-gray-600">
-                        採用データの分析に基づき、効果的な採用戦略を立案します。定量的な指標で採用活動の改善をサポートします。
+                        市場データやユーザーフィードバックを活用した、科学的な商品開発を実践します。リスクを最小限に抑えた開発プロセスを提案します。
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">継続的なサポート</h4>
+                      <h4 className="font-semibold mb-2">柔軟な対応</h4>
                       <p className="text-gray-600">
-                        採用活動の開始から定着まで、一貫したサポートを提供します。定期的な進捗確認と戦略の見直しを行います。
+                        小ロットから大量生産まで、様々な生産規模に対応可能です。また、既存商品の改善や新規商品の開発など、幅広いニーズに対応します。
                       </p>
                     </div>
                   </div>
@@ -146,10 +146,10 @@ export default function RecruitmentConsultingPage() {
                     transition={{ duration: 0.5 }}
                     className="bg-gray-50 p-6 rounded-lg"
                   >
-                    <Award className="w-8 h-8 text-emerald-600 mb-4" />
-                    <h4 className="font-semibold mb-2">IT企業のエンジニア採用</h4>
+                    <TrendingUp className="w-8 h-8 text-emerald-600 mb-4" />
+                    <h4 className="font-semibold mb-2">食品メーカーの新商品開発</h4>
                     <p className="text-gray-600">
-                      求人ページの改善と採用プロセスの最適化により、応募者数が2倍に増加。採用コストも30%削減しました。
+                      市場調査から商品企画、試作開発までをサポート。新商品は発売後3ヶ月で売上目標の150%を達成しました。
                     </p>
                   </motion.div>
                   <motion.div
@@ -158,10 +158,10 @@ export default function RecruitmentConsultingPage() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="bg-gray-50 p-6 rounded-lg"
                   >
-                    <Award className="w-8 h-8 text-emerald-600 mb-4" />
-                    <h4 className="font-semibold mb-2">小売業の店舗スタッフ採用</h4>
+                    <TrendingUp className="w-8 h-8 text-emerald-600 mb-4" />
+                    <h4 className="font-semibold mb-2">化粧品ブランドの商品改善</h4>
                     <p className="text-gray-600">
-                      ターゲット層に合わせた採用戦略の立案と実施により、採用期間を50%短縮。定着率も向上しました。
+                      既存商品のユーザーフィードバックを基に改善を実施。パッケージデザインと配合の見直しにより、売上を前年比200%に伸ばしました。
                     </p>
                   </motion.div>
                 </div>
@@ -171,9 +171,9 @@ export default function RecruitmentConsultingPage() {
               <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-8 text-white">
                 <div className="flex flex-col md:flex-row items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-bold mb-2">採用戦略の改善をお考えですか？</h3>
+                    <h3 className="text-xl font-bold mb-2">新商品開発をお考えですか？</h3>
                     <p className="text-gray-100">
-                      無料相談で、あなたの会社に最適な採用戦略をご提案します。
+                      無料相談で、あなたのビジネスに最適な商品開発戦略をご提案します。
                     </p>
                   </div>
                   <Button className="mt-4 md:mt-0 bg-white text-emerald-700 hover:bg-gray-100">
@@ -187,4 +187,4 @@ export default function RecruitmentConsultingPage() {
       </main>
     </div>
   )
-}
+} 

@@ -95,7 +95,7 @@ export default function Footer() {
             <h4 className="text-white font-medium mb-4">お問い合わせ</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
+                <Link href="/contact" className="hover:text-emerald-400 transition-colors">
                   お問い合わせフォーム
                 </Link>
               </li>
@@ -160,19 +160,23 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center space-x-4">
-          <Link href="#" className="text-xs hover:text-emerald-400 transition-colors">
-            プライバシーポリシー
-          </Link>
-          <Link href="#" className="text-xs hover:text-emerald-400 transition-colors">
-            利用規約
-          </Link>
-          <Link href="#" className="text-xs hover:text-emerald-400 transition-colors">
-            特定商取引法に基づく表記
-          </Link>
-        </div>
-        <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-          <p>&copy; {new Date().getFullYear()} ATTRACTIVE GAIA All Rights Reserved.</p>
+        <div className="border-t border-gray-800 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-sm mb-4 md:mb-0">
+              © 2025 Attractive Gaia. All rights reserved.
+            </div>
+            <div className="flex space-x-6 text-sm">
+              <Link href="/privacy" className="hover:text-emerald-400 transition-colors">
+                プライバシーポリシー
+              </Link>
+              <Link href="/terms" className="hover:text-emerald-400 transition-colors">
+                利用規約
+              </Link>
+              <Link href="/commercial-transaction" className="hover:text-emerald-400 transition-colors">
+                特定商取引法に基づく表記
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

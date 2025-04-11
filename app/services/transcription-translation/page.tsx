@@ -4,14 +4,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
-import { CheckCircle2, Users, MessageSquare, BarChart2, Target, Award } from "lucide-react"
+import { CheckCircle2, FileText, Languages, Headphones, Clock, TrendingUp } from "lucide-react"
 
-export default function RecruitmentConsultingPage() {
+export default function TranscriptionTranslationPage() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-1">
         {/* ヒーローセクション */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-br from-teal-900 via-emerald-800 to-teal-900 text-white">
+        <section className="relative py-20 md:py-32 bg-gradient-to-br from-blue-900 via-sky-800 to-blue-900 text-white">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -19,16 +19,16 @@ export default function RecruitmentConsultingPage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <Badge className="mb-6 bg-emerald-400/20 text-emerald-100 hover:bg-emerald-400/30 border-emerald-400/30 backdrop-blur-sm">
-                採用コンサルティング
+              <Badge className="mb-6 bg-sky-400/20 text-sky-100 hover:bg-sky-400/30 border-sky-400/30 backdrop-blur-sm">
+                文字起こし・翻訳
               </Badge>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-                採用ターゲットに響く<br />
-                効果的な採用戦略を提案
+                音声・動画の文字起こしと<br />
+                多言語翻訳をワンストップで
               </h1>
-              <p className="text-lg md:text-xl text-emerald-100 mb-10 max-w-3xl mx-auto">
-                求人ページの制作から採用戦略の立案まで、<br />
-                あなたの会社に最適な人材を獲得するためのサポートを提供します。
+              <p className="text-lg md:text-xl text-sky-100 mb-10 max-w-3xl mx-auto">
+                音声・動画の文字起こしから多言語翻訳まで、<br />
+                高品質なサービスを提供します。
               </p>
             </motion.div>
           </div>
@@ -48,11 +48,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <Users className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">求人ページ制作</h3>
+                    <Headphones className="w-6 h-6 text-sky-600 mr-2" />
+                    <h3 className="text-xl font-semibold">文字起こし</h3>
                   </div>
                   <p className="text-gray-600">
-                    自社の魅力を最大限に伝える求人ページを制作します。ターゲット層に響くデザインとコピーライティングで、応募率の向上をサポートします。
+                    音声・動画の文字起こしを高精度で行います。専門分野の用語にも対応します。
                   </p>
                 </motion.div>
 
@@ -63,11 +63,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <MessageSquare className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">採用戦略コンサルティング</h3>
+                    <Languages className="w-6 h-6 text-sky-600 mr-2" />
+                    <h3 className="text-xl font-semibold">翻訳</h3>
                   </div>
                   <p className="text-gray-600">
-                    業界動向や競合分析を基に、効果的な採用戦略を提案します。採用プロセスの改善や採用ツールの選定もサポートします。
+                    英語・中国語・韓国語など、多言語への翻訳を提供します。専門分野の翻訳にも対応します。
                   </p>
                 </motion.div>
 
@@ -78,11 +78,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <BarChart2 className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">採用効果分析</h3>
+                    <FileText className="w-6 h-6 text-sky-600 mr-2" />
+                    <h3 className="text-xl font-semibold">校正・編集</h3>
                   </div>
                   <p className="text-gray-600">
-                    採用活動の効果を定量的・定性的に分析し、改善点を提案します。データに基づいた採用戦略の最適化をサポートします。
+                    文字起こしや翻訳の内容を校正・編集し、より自然な表現に仕上げます。
                   </p>
                 </motion.div>
 
@@ -93,11 +93,11 @@ export default function RecruitmentConsultingPage() {
                   className="bg-gray-50 p-6 rounded-lg"
                 >
                   <div className="flex items-center mb-4">
-                    <Target className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">ターゲット層分析</h3>
+                    <Clock className="w-6 h-6 text-sky-600 mr-2" />
+                    <h3 className="text-xl font-semibold">納期管理</h3>
                   </div>
                   <p className="text-gray-600">
-                    求職者の属性や行動特性を分析し、効果的なアプローチ方法を提案します。採用ターゲットの明確化と最適な採用チャネルの選定をサポートします。
+                    緊急案件にも対応可能な納期管理システムで、スピーディーな納品を実現します。
                   </p>
                 </motion.div>
               </div>
@@ -107,29 +107,29 @@ export default function RecruitmentConsultingPage() {
                 <h3 className="text-2xl font-bold mb-8 text-center">サービスの特徴</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-6 h-6 text-sky-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">カスタマイズされた提案</h4>
+                      <h4 className="font-semibold mb-2">高精度な文字起こし</h4>
                       <p className="text-gray-600">
-                        業種や企業規模、採用ポジションに応じて、最適な採用戦略をカスタマイズして提案します。
+                        AIと人間のダブルチェックにより、高精度な文字起こしを実現します。専門分野の用語にも対応します。
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-6 h-6 text-sky-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">データドリブンなアプローチ</h4>
+                      <h4 className="font-semibold mb-2">ネイティブチェック</h4>
                       <p className="text-gray-600">
-                        採用データの分析に基づき、効果的な採用戦略を立案します。定量的な指標で採用活動の改善をサポートします。
+                        翻訳はネイティブスピーカーによるチェックを行い、自然な表現を実現します。
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <CheckCircle2 className="w-6 h-6 text-emerald-600 mt-1 mr-3 flex-shrink-0" />
+                    <CheckCircle2 className="w-6 h-6 text-sky-600 mt-1 mr-3 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold mb-2">継続的なサポート</h4>
+                      <h4 className="font-semibold mb-2">セキュリティ対策</h4>
                       <p className="text-gray-600">
-                        採用活動の開始から定着まで、一貫したサポートを提供します。定期的な進捗確認と戦略の見直しを行います。
+                        機密情報の取り扱いに関する厳格なセキュリティ対策を実施しています。
                       </p>
                     </div>
                   </div>
@@ -146,10 +146,10 @@ export default function RecruitmentConsultingPage() {
                     transition={{ duration: 0.5 }}
                     className="bg-gray-50 p-6 rounded-lg"
                   >
-                    <Award className="w-8 h-8 text-emerald-600 mb-4" />
-                    <h4 className="font-semibold mb-2">IT企業のエンジニア採用</h4>
+                    <TrendingUp className="w-8 h-8 text-sky-600 mb-4" />
+                    <h4 className="font-semibold mb-2">大手メーカーの技術文書翻訳</h4>
                     <p className="text-gray-600">
-                      求人ページの改善と採用プロセスの最適化により、応募者数が2倍に増加。採用コストも30%削減しました。
+                      技術文書の英語・中国語翻訳を担当。専門用語の正確な翻訳で高評価を獲得しました。
                     </p>
                   </motion.div>
                   <motion.div
@@ -158,25 +158,25 @@ export default function RecruitmentConsultingPage() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="bg-gray-50 p-6 rounded-lg"
                   >
-                    <Award className="w-8 h-8 text-emerald-600 mb-4" />
-                    <h4 className="font-semibold mb-2">小売業の店舗スタッフ採用</h4>
+                    <TrendingUp className="w-8 h-8 text-sky-600 mb-4" />
+                    <h4 className="font-semibold mb-2">インタビュー動画の文字起こし</h4>
                     <p className="text-gray-600">
-                      ターゲット層に合わせた採用戦略の立案と実施により、採用期間を50%短縮。定着率も向上しました。
+                      複数のインタビュー動画の文字起こしを担当。短時間での納品と高精度な文字起こしで評価されました。
                     </p>
                   </motion.div>
                 </div>
               </div>
 
               {/* CTAセクション */}
-              <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-8 text-white">
+              <div className="bg-gradient-to-r from-sky-600 to-blue-600 rounded-lg p-8 text-white">
                 <div className="flex flex-col md:flex-row items-center justify-between">
                   <div>
-                    <h3 className="text-xl font-bold mb-2">採用戦略の改善をお考えですか？</h3>
+                    <h3 className="text-xl font-bold mb-2">文字起こし・翻訳サービスをお探しですか？</h3>
                     <p className="text-gray-100">
-                      無料相談で、あなたの会社に最適な採用戦略をご提案します。
+                      無料相談で、あなたのニーズに最適なサービスをご提案します。
                     </p>
                   </div>
-                  <Button className="mt-4 md:mt-0 bg-white text-emerald-700 hover:bg-gray-100">
+                  <Button className="mt-4 md:mt-0 bg-white text-sky-700 hover:bg-gray-100">
                     <Link href="/free-consultation">無料相談する</Link>
                   </Button>
                 </div>
@@ -187,4 +187,4 @@ export default function RecruitmentConsultingPage() {
       </main>
     </div>
   )
-}
+} 

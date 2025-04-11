@@ -1,6 +1,6 @@
 // lib/data.tsx
 import { LucideProps } from "lucide-react";
-import { Brain, PenTool, Image, Layout, ShoppingCart, MapPin, Code, MessageSquare } from "lucide-react";
+import { Brain, PenTool, Image, Layout, ShoppingCart, MapPin, Code, MessageSquare, Globe, Star, Languages, FileText, Package, Recycle } from "lucide-react";
 import { ComponentType } from "react";
 
 export type ServiceItem = {
@@ -54,9 +54,45 @@ export const services: ServiceItem[] = [
     href: "/services/web-doctor"
   },
   {
+    title: "輸入コンサルティング",
+    description: "海外製品の輸入ビジネスをトータルでサポート",
+    icon: Globe,
+    href: "/services/import-consulting"
+  },
+  {
+    title: "企業占い",
+    description: "データと占いで企業の未来を予測",
+    icon: Star,
+    href: "/services/corporate-fortune-telling"
+  },
+  {
+    title: "文字起こし・翻訳",
+    description: "音声・動画の文字起こしと多言語翻訳をワンストップで",
+    icon: Languages,
+    href: "/services/transcription-translation"
+  },
+  {
+    title: "コンテンツ販売",
+    description: "高品質なコンテンツを効果的に販売",
+    icon: FileText,
+    href: "/services/content-sales"
+  },
+  {
+    title: "オリジナル商品",
+    description: "オリジナル商品の企画・開発・販売をサポート",
+    icon: Package,
+    href: "/services/original-products"
+  },
+  {
+    title: "リユースビジネス",
+    description: "サステナブルなリユースビジネスを支援",
+    icon: Recycle,
+    href: "/services/reuse-business"
+  },
+  {
     title: "無料相談",
     description: "お気軽にご相談ください",
     icon: MessageSquare,
-    href: "/contact"
+    href: "/free-consultation"
   }
 ];

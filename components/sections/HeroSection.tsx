@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import HeroAnimation from "@/components/hero-animation"
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 export default function HeroSection() {
   return (
@@ -64,10 +65,9 @@ export default function HeroSection() {
           </Button>
           <Button
             size="lg"
-            variant="outline"
-            className="border-emerald-300 text-emerald-300 hover:bg-emerald-300/10 backdrop-blur-sm transition-all duration-300 transform hover:-translate-y-1"
+            className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg"
           >
-            無料相談する
+            <Link href="/free-consultation">無料相談する</Link>
           </Button>
         </motion.div>
 

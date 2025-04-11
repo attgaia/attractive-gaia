@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle, PenTool, Search, Clock, UserCheck, Edit, Users, Zap, MapPin, CheckSquare, Mic, Camera } from 'lucide-react';
+import { CheckCircle, PenTool, Search, Clock, UserCheck, Edit, Users, Zap, MapPin, CheckSquare, Mic, Camera, MessageCircle } from 'lucide-react';
 
 const ArticleWritingPage = () => {
   return (
@@ -150,10 +150,11 @@ const ArticleWritingPage = () => {
           企業担当者様のパートナーとして、柔軟に対応いたします。
           必要事項を下記フォームよりお送りください。
         </p>
-        {/* TODO: お問い合わせフォームへのリンク or 埋め込み */}
-        <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
-          お問い合わせフォームへ
-        </Button>
+        <div className="flex justify-center space-x-4">
+          <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
+            <MessageCircle className="mr-2 h-5 w-5" /> お問い合わせフォームへ
+          </Button>
+        </div>
       </section>
     </div>
   );
