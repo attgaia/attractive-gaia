@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { CheckCircle, BrainCircuit, Globe, Users, Palette } from 'lucide-react';
 
 const AiConsultingPage = () => {
@@ -52,17 +52,59 @@ const AiConsultingPage = () => {
       <section className="mb-16 md:mb-24">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">"人が足りない"時代にAIという選択肢を</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="p-6 text-center">
-            <h3 className="text-xl font-semibold mb-3 text-emerald-700">日常業務の効率化</h3>
-            <p className="text-gray-600">社内の事務処理、日報作成、メール返信など</p>
+          <Card className="bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300">
+            <CardHeader className="space-y-2">
+              <CardTitle className="text-2xl font-bold">AIコンサルティング</CardTitle>
+              <CardDescription className="text-blue-100">
+                最先端のAI技術を活用したビジネスソリューション
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-blue-100">
+                当社のAIコンサルティングサービスでは、お客様のビジネスに最適なAIソリューションを提案し、実装までサポートいたします。
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button variant="secondary" className="bg-white text-blue-700 hover:bg-blue-100 w-full">
+                詳細を見る
+              </Button>
+            </CardFooter>
           </Card>
-          <Card className="p-6 text-center">
-            <h3 className="text-xl font-semibold mb-3 text-emerald-700">コンテンツ制作支援</h3>
-            <p className="text-gray-600">採用ページやブログ、SNS投稿の作成など</p>
+          <Card className="bg-white shadow-md hover:shadow-lg transition-all duration-300">
+            <CardHeader className="space-y-2">
+              <CardTitle className="text-xl font-semibold text-emerald-700">コンテンツ制作支援</CardTitle>
+              <CardDescription className="text-gray-600">
+                採用ページやブログ、SNS投稿の作成など
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600">
+                AIを活用した効率的なコンテンツ制作をサポートします。
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button variant="outline" className="text-emerald-700 border-emerald-700 hover:bg-emerald-50 w-full">
+                詳細を見る
+              </Button>
+            </CardFooter>
           </Card>
-          <Card className="p-6 text-center">
-            <h3 className="text-xl font-semibold mb-3 text-emerald-700">顧客対応の自動化</h3>
-            <p className="text-gray-600">お客様対応のテンプレ化やチャットボット導入など</p>
+          <Card className="bg-white shadow-md hover:shadow-lg transition-all duration-300">
+            <CardHeader className="space-y-2">
+              <CardTitle className="text-xl font-semibold text-emerald-700">顧客対応の自動化</CardTitle>
+              <CardDescription className="text-gray-600">
+                お客様対応のテンプレ化やチャットボット導入など
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600">
+                AIを活用した顧客対応の自動化で業務効率を向上させます。
+              </p>
+            </CardContent>
+            <CardFooter>
+              <Button variant="outline" className="text-emerald-700 border-emerald-700 hover:bg-emerald-50 w-full">
+                詳細を見る
+              </Button>
+            </CardFooter>
           </Card>
         </div>
         <p className="text-center text-lg text-gray-700 mt-8">

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import ServiceCard from "@/components/service-card"
+import AiSupportCard from "@/components/ai-support-card"
 import NewsCard from "@/components/news-card"
 import TestimonialSlider from "@/components/testimonial-slider"
 import HeroAnimation from "@/components/hero-animation"
@@ -136,16 +137,10 @@ export default function Home() {
           <div className="container">
             <h2 className="text-3xl font-bold text-center mb-12">サービス一覧</h2>
 
-            {/* メインサービス（特大表示） */}
-            <div className="mb-16">
-              <ServiceCard
-                title="AI支援コンサルティング"
-                description="最新のAI技術を活用し、業務効率化から新規事業開発まで、企業のDX推進を包括的にサポートします。ChatGPT、Midjourney、Stable Diffusionなど最新AIツールの導入・活用支援から、カスタムAIシステムの開発まで対応可能です。"
-                icon="brain-circuit"
-                featured={true}
-                link="/services/ai-consulting"
-              />
-            </div>
+{/* メインサービス（特大表示） */}            
+<section className="py-12">
+  <AiSupportCard />
+</section>
 
             {/* カテゴリー3: Web制作・技術サポート系 */}
             <div className="mb-16">

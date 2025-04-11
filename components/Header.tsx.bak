@@ -9,9 +9,12 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between">
+        {/* ロゴ */}
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.svg" alt="ATT GAIA" width={120} height={30} />
         </Link>
+
+        {/* ナビゲーション */}
         <nav className="flex gap-6">
           <Link href="#services" className="text-sm font-medium hover:text-emerald-600 transition-colors">
             サービス
@@ -26,8 +29,12 @@ export default function Header() {
             企業情報
           </Link>
         </nav>
+
+        {/* ボタン */}
         <div className="flex items-center gap-4">
-          <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">AI支援サービスを見る</Button>
+          <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
+            AI支援サービスを見る
+          </Button>
         </div>
       </div>
     </header>
