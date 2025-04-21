@@ -14,14 +14,14 @@ import HeroAnimation from "@/components/hero-animation"
 import CategoryNav from "@/components/category-nav"
 import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion"
+import { getPosts } from '@/lib/graphql'
 
 function ArticleList() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     async function fetchPosts() {
-      const response = await fetch('https://attgaia.com/wp-json/wp/v2/posts?_embed');
-      const data = await response.json();
+      const data = await getPosts();
       setPosts(data);
     }
     fetchPosts();
@@ -29,21 +29,50 @@ function ArticleList() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-      {posts.slice(0, 6).map((post: any) => (
-        <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-          <img
-            src={post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].source_url : '/placeholder.svg'}
-            alt={post.title.rendered}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h3 dangerouslySetInnerHTML={{ __html: post.title.rendered }} className="text-lg font-bold mb-2" />
-            <a href={`/${post.slug}`} className="text-blue-500 hover:underline">続きを読む</a>
+      {posts.slice(0, 6).map((post) => (
+        <Link
+          key={post.id}
+          href={`/blog/${post.slug}`}
+          className="group block space-y-4 shadow-lg hover:shadow-xl transition-shadow duration-300"
+        >
+          {post.featuredImage?.node?.sourceUrl && (
+            <div className="relative aspect-video overflow-hidden rounded-lg">
+              <Image
+                src={post.featuredImage.node.sourceUrl}
+                alt={post.title}
+                fill
+                className="object-cover transition-transform group-hover:scale-105"
+              />
+            </div>
+          )}
+          <div className="space-y-2 p-4">
+            <div className="text-xs text-white bg-emerald-600/90 rounded-full px-2 py-1 inline-block">
+              {post.categories.nodes.map(cat => cat.name).join(', ')}
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 group-hover:text-primary">
+              {post.title}
+            </h3>
+            <p className="text-sm text-gray-700 line-clamp-2">
+              {post.excerpt}
+            </p>
+            <div className="flex items-center text-xs text-gray-500">
+              {post.author?.node?.avatar?.url && (
+                <img 
+                  src={post.author.node.avatar.url} 
+                  alt={post.author.node.name} 
+                  className="w-6 h-6 rounded-full mr-2 object-cover" 
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              )}
+              <span>著者: {post.author?.node?.name}</span>
+            </div>
           </div>
-        </div>
+        </Link>
       ))}
-      <div className="flex justify-center mt-8">
-        <a href="/all-articles" className="inline-block bg-emerald-600 text-white py-2 px-4 rounded hover:bg-emerald-700 transition text-center">記事一覧はこちら</a>
+      <div className="col-span-full flex justify-center mt-8">
+        <Link href="/all-articles" className="inline-block bg-emerald-600 text-white py-2 px-4 rounded hover:bg-emerald-700 transition text-center">記事一覧はこちら</Link>
       </div>
     </div>
   );
