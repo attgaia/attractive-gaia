@@ -6,7 +6,6 @@ import { ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const categories = [
-  { id: "ai", name: "AI支援" },
   { id: "web", name: "Web制作" },
   { id: "content", name: "コンテンツ制作" },
   { id: "app", name: "アプリ開発" },

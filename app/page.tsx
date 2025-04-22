@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { useRouter } from 'next/navigation'
 import { ArrowRight, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -79,6 +80,8 @@ function ArticleList() {
 }
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-1">
@@ -117,27 +120,21 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg md:text-xl text-emerald-100 mb-10 max-w-2xl"
+              className="text-lg md:text-xl text-emerald-100 mb-16 max-w-2xl"
             >
               業務効率化、社内教育、商品開発まで、<br className="hidden md:block" />
               すべてを支える"デジタル右腕"として<br className="hidden md:block" />
               あなたのビジネスを次のステージへ
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 mb-16"
-            >
-              <Button
-                size="lg"
-                className="bg-emerald-500 text-white hover:bg-emerald-400 shadow-lg shadow-emerald-700/30 transition-all duration-300 transform hover:-translate-y-1"
+            <div className="relative z-10 flex justify-center w-full mb-16 pointer-events-auto">
+              <a
+                href="/services/ai-consulting"
+                className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg px-8 py-4 rounded-md transition-colors duration-200"
               >
-                AI支援サービスを見る
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </motion.div>
+                AI支援サービスを見る <ArrowRight className="inline-block align-middle ml-2 h-5 w-5" />
+              </a>
+            </div>
 
             <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
               <a href="#services" className="text-emerald-300 hover:text-emerald-100 transition-colors">

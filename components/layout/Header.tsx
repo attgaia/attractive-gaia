@@ -27,7 +27,7 @@ export default function Header() {
           </Link>
         </nav>
         <div className="flex items-center gap-4">
-          <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">AI支援サービスを見る</Button>
+          {/* AI支援サービスボタンを削除 */}
         </div>
       </div>
     </header>
