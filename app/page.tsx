@@ -14,7 +14,7 @@ import TestimonialSlider from "@/components/testimonial-slider"
 import HeroAnimation from "@/components/hero-animation"
 import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion"
-import { getPosts } from '@/lib/graphql'
+import { getPosts, getWorksPosts } from '@/lib/graphql'
 
 function ArticleList() {
   const [posts, setPosts] = useState([]);
@@ -74,6 +74,52 @@ function ArticleList() {
       <div className="col-span-full flex justify-center mt-8">
         <Link href="/all-articles" className="inline-block bg-emerald-600 text-white py-2 px-4 rounded hover:bg-emerald-700 transition text-center">記事一覧はこちら</Link>
       </div>
+    </div>
+  );
+}
+
+function WorksList() {
+  const [works, setWorks] = useState([]);
+
+  useEffect(() => {
+    async function fetchWorks() {
+      const data = await getWorksPosts();
+      setWorks(data);
+    }
+    fetchWorks();
+  }, []);
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      {works.map((work) => (
+        <Card key={work.id}>
+          <CardContent className="p-0">
+            {work.featuredImage?.node?.sourceUrl && (
+              <div className="relative aspect-video">
+                <Image
+                  src={work.featuredImage.node.sourceUrl}
+                  alt={work.featuredImage.node.altText || work.title}
+                  fill
+                  className="object-cover rounded-t-lg"
+                />
+              </div>
+            )}
+            <div className="p-6">
+              <h3 className="text-lg font-semibold mb-2">{work.title}</h3>
+              <div 
+                className="text-sm text-gray-600 mb-4 line-clamp-2"
+                dangerouslySetInnerHTML={{ __html: work.excerpt }}
+              />
+              <Link 
+                href={`/works/${work.slug}`} 
+                className="text-sm font-medium text-emerald-600 hover:underline"
+              >
+                詳細を見る
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
     </div>
   );
 }
@@ -316,66 +362,13 @@ export default function Home() {
         <section id="case-studies" className="py-16 md:py-24 bg-gray-100">
           <div className="container">
             <h2 className="text-3xl font-bold text-center mb-12">制作実例</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <Card>
-                <CardContent className="p-0">
-                  <Image
-                    src="/case-study-1.jpg"
-                    alt="制作実例1"
-                    width={400}
-                    height={250}
-                    className="rounded-t-lg object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold mb-2">Webサイト制作・ECサイト構築</h3>
-                    <p className="text-sm text-gray-600 mb-4">ShopifyとWordPressを連携し、メディアECサイトを構築。デザインから開発、マーケティングまで一貫して支援しました。</p>
-                    <Link href="/case-studies/web-site-ec" className="text-sm font-medium text-emerald-600 hover:underline">
-                      詳細を見る
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-0">
-                  <Image
-                    src="/case-study-2.jpg"
-                    alt="制作実例2"
-                    width={400}
-                    height={250}
-                    className="rounded-t-lg object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold mb-2">パンフレット・チラシデザイン</h3>
-                    <p className="text-sm text-gray-600 mb-4">企業パンフレットのデザインを刷新。ブランドイメージを効果的に伝え、営業活動をサポートするツールを作成しました。</p>
-                    <Link href="/case-studies/pamphlet-design" className="text-sm font-medium text-emerald-600 hover:underline">
-                      詳細を見る
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-0">
-                  <Image
-                    src="/case-study-3.jpg"
-                    alt="制作実例3"
-                    width={400}
-                    height={250}
-                    className="rounded-t-lg object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-lg font-semibold mb-2">AI導入コンサルティング</h3>
-                    <p className="text-sm text-gray-600 mb-4">製造業のお客様向けに、AIを活用した品質検査システムの導入を支援。検品作業の自動化と精度向上を実現しました。</p>
-                    <Link href="/case-studies/ai-consulting" className="text-sm font-medium text-emerald-600 hover:underline">
-                      詳細を見る
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            <WorksList />
             <div className="text-center">
               <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
-                すべての実例を見る
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <Link href="/works" className="flex items-center">
+                  すべての実例を見る
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </div>
