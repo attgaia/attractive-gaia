@@ -12,7 +12,6 @@ import AiSupportCard from "@/components/ai-support-card"
 import NewsCard from "@/components/news-card"
 import TestimonialSlider from "@/components/testimonial-slider"
 import HeroAnimation from "@/components/hero-animation"
-import CategoryNav from "@/components/category-nav"
 import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion"
 import { getPosts } from '@/lib/graphql'
@@ -141,32 +140,18 @@ export default function Home() {
                 <ArrowDown className="h-8 w-8" />
               </a>
             </div>
-
-            {/* 波形デザイン */}
-            <div className="absolute bottom-0 left-0 right-0">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto">
-                <path
-                  fill="#ffffff"
-                  fillOpacity="1"
-                  d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-                ></path>
-              </svg>
-            </div>
           </div>
         </section>
-
-        {/* サービスカテゴリナビゲーション */}
-        <CategoryNav />
 
         {/* サービス紹介セクション */}
         <section id="services" className="py-16 md:py-24 bg-white">
           <div className="container">
             <h2 className="text-3xl font-bold text-center mb-12">サービス一覧</h2>
 
-{/* メインサービス（特大表示） */}            
-<section className="py-12">
-  <AiSupportCard />
-</section>
+            {/* メインサービス（特大表示） */}            
+            <section className="py-12">
+              <AiSupportCard />
+            </section>
 
             {/* カテゴリー3: Web制作・技術サポート系 */}
             <div className="mb-16">
