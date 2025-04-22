@@ -5,11 +5,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from "@/components/ui/card";
 import { getWorksPosts } from '@/lib/graphql';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function WorksPage() {
   const [works, setWorks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const worksPerPage = 9; // 3列 × 3段 = 9記事
 
   useEffect(() => {
     async function fetchWorks() {
@@ -26,11 +29,17 @@ export default function WorksPage() {
     fetchWorks();
   }, []);
 
+  // 現在のページの記事を取得
+  const indexOfLastWork = currentPage * worksPerPage;
+  const indexOfFirstWork = indexOfLastWork - worksPerPage;
+  const currentWorks = works.slice(indexOfFirstWork, indexOfLastWork);
+  const totalPages = Math.ceil(works.length / worksPerPage);
+
   if (isLoading) {
     return (
       <div className="container mx-auto py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[...Array(6)].map((_, i) => (
+          {[...Array(9)].map((_, i) => (
             <div key={i} className="animate-pulse">
               <div className="aspect-video bg-gray-200 rounded-t-lg"></div>
               <div className="p-6 space-y-4">
@@ -58,8 +67,8 @@ export default function WorksPage() {
 
       <h1 className="text-4xl font-bold mb-12 text-center">制作実例</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {works.map((work) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {currentWorks.map((work) => (
           <Card key={work.id}>
             <CardContent className="p-0">
               {work.featuredImage?.node?.sourceUrl && (
@@ -88,6 +97,42 @@ export default function WorksPage() {
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      {/* ページネーション */}
+      <div className="flex justify-center items-center space-x-2">
+        <Button
+          variant="outline"
+          onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+          className="flex items-center"
+        >
+          <ChevronLeft className="h-4 w-4 mr-1" />
+          前へ
+        </Button>
+        
+        <div className="flex items-center space-x-1">
+          {[...Array(totalPages)].map((_, i) => (
+            <Button
+              key={i + 1}
+              variant={currentPage === i + 1 ? "default" : "outline"}
+              onClick={() => setCurrentPage(i + 1)}
+              className="w-8 h-8 p-0"
+            >
+              {i + 1}
+            </Button>
+          ))}
+        </div>
+
+        <Button
+          variant="outline"
+          onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+          disabled={currentPage === totalPages}
+          className="flex items-center"
+        >
+          次へ
+          <ChevronRight className="h-4 w-4 ml-1" />
+        </Button>
       </div>
     </div>
   );
