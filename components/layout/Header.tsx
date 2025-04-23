@@ -13,14 +13,11 @@ export default function Header() {
           <Image src="/logo.svg" alt="ATT GAIA" width={120} height={30} />
         </Link>
         <nav className="flex gap-6">
-          <Link href="#services" className="text-sm font-medium hover:text-emerald-600 transition-colors">
-            サービス
+          <Link href="/services" className="text-sm font-medium hover:text-emerald-600 transition-colors">
+            サービス一覧
           </Link>
-          <Link href="#case-studies" className="text-sm font-medium hover:text-emerald-600 transition-colors">
-            制作実例
-          </Link>
-          <Link href="#testimonials" className="text-sm font-medium hover:text-emerald-600 transition-colors">
-            お客様の声
+          <Link href="/works" className="text-sm font-medium hover:text-emerald-600 transition-colors">
+            成功事例
           </Link>
           <Link href="/about" className="text-sm font-medium hover:text-emerald-600 transition-colors">
             企業情報

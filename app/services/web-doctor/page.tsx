@@ -4,7 +4,12 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Check, HelpCircle, MessageCircle, Server, Settings, HardDrive, Truck, Edit, Wrench, AlertTriangle } from 'lucide-react'; // アイコン追加
+import { Check, HelpCircle, MessageCircle, Server, Settings, HardDrive, Truck, Edit, Wrench, AlertTriangle, ArrowLeft } from 'lucide-react'; // アイコン追加
+import Link from "next/link"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 const WebDoctorPage = () => {
   return (
@@ -139,24 +144,74 @@ const WebDoctorPage = () => {
               </Card>
             </div>
           </div>
-           <p className="text-center text-sm text-gray-600 mt-8">※急ぎ対応にもできる限り柔軟に対応します。</p>
+          <p className="text-center text-sm text-gray-600 mt-8">※急ぎ対応にもできる限り柔軟に対応します。</p>
         </section>
 
-        {/* 5. CTA（お問い合わせ誘導） */}
-        <section id="cta" className="text-center bg-white rounded-lg shadow-lg p-10 md:p-16 border-t-4 border-blue-600">
-          <h2 className="text-3xl font-bold text-blue-900 mb-4">＼Webの不調、まずはご相談ください／</h2>
-          <p className="text-gray-700 mb-8 max-w-lg mx-auto">
-            LINEまたはお問い合わせフォームより、お気軽にメッセージをお送りください。
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
-              <MessageCircle className="mr-2 h-5 w-5" /> お問い合わせフォームへ
-            </Button>
-            <Button size="lg" variant="outline" className="border-green-500 text-green-600 hover:bg-green-50">
-              {/* 仮のLINEアイコン */}
-              <svg className="mr-2 h-5 w-5 fill-current" viewBox="0 0 40 40"><path d="M32.2 6.8a15.9 15.9 0 10-24.4 24.4A15.9 15.9 0 0032.2 6.8zM11.5 25.5l-.2.1h-.1l-1.7.8c-.5.3-.8.8-.8 1.4 0 .8.7 1.5 1.5 1.5.3 0 .5-.1.8-.2l2.5-1.2c.2-.1.3-.2.5-.2.2 0 .4.1.6.2l2.3 1.5c.3.2.6.3 1 .3.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5c-.1 0-.2 0-.3.1l-1.8 1.1c-.2.1-.4.2-.7.2-.2 0-.4-.1-.6-.2l-2.3-1.5c-.6-.4-1.3-.5-2 .1zm8.8-2.4c.8 0 1.5-.7 1.5-1.5v-7.3c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5v7.3c0 .8.7 1.5 1.5 1.5zm6.7 0c.8 0 1.5-.7 1.5-1.5v-7.3c0-.8-.7-1.5-1.5-1.5s-1.5.7-1.5 1.5v7.3c0 .8.7 1.5 1.5 1.5z"></path></svg>
-              LINEで相談する
-            </Button>
+        {/* 5. お申し込みフォーム */}
+        <section id="form" className="mb-16 md:mb-24">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">📝 お申し込みフォーム</h2>
+          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+            <form className="space-y-6">
+              <div className="space-y-4">
+                <div>
+                  <Label htmlFor="service">ご希望のサービス</Label>
+                  <RadioGroup defaultValue="diagnosis" className="mt-2">
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="diagnosis" id="diagnosis" />
+                      <Label htmlFor="diagnosis">初期診断のみ</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="repair" id="repair" />
+                      <Label htmlFor="repair">修正・改修</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="maintenance" id="maintenance" />
+                      <Label htmlFor="maintenance">定期メンテナンス</Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+
+                <div>
+                  <Label htmlFor="company">会社名</Label>
+                  <Input id="company" placeholder="株式会社〇〇" />
+                </div>
+
+                <div>
+                  <Label htmlFor="name">お名前</Label>
+                  <Input id="name" placeholder="山田 太郎" />
+                </div>
+
+                <div>
+                  <Label htmlFor="email">メールアドレス</Label>
+                  <Input id="email" type="email" placeholder="example@example.com" />
+                </div>
+
+                <div>
+                  <Label htmlFor="phone">電話番号</Label>
+                  <Input id="phone" type="tel" placeholder="090-0000-0000" />
+                </div>
+
+                <div>
+                  <Label htmlFor="url">サイトURL</Label>
+                  <Input id="url" type="url" placeholder="https://example.com" />
+                </div>
+
+                <div>
+                  <Label htmlFor="message">症状・ご要望</Label>
+                  <Textarea
+                    id="message"
+                    placeholder="現在発生している問題やご要望をお聞かせください。"
+                    className="min-h-[120px]"
+                  />
+                </div>
+              </div>
+
+              <div className="text-center">
+                <Button type="submit" className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-4 text-lg">
+                  お申し込み内容を確認する
+                </Button>
+              </div>
+            </form>
           </div>
         </section>
       </div>

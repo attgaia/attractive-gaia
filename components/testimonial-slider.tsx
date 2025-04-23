@@ -7,29 +7,23 @@ import { cn } from "@/lib/utils"
 
 const testimonials = [
   {
-    id: 1,
-    content:
-      "AIコンサルティングを導入してから、社内の業務効率が大幅に向上しました。特に定型業務の自動化により、社員が本来の創造的な業務に集中できるようになりました。",
-    author: "田中 健太",
-    position: "株式会社テクノイノベーション 代表取締役",
+    name: "田中 健太",
+    role: "取締役",
     company: "製造業",
+    content: "「Webサイトのリニューアルを依頼しました。デザインから機能まで、すべての要望に丁寧に対応していただき、満足のいく結果となりました。」"
   },
   {
-    id: 2,
-    content:
-      "Web制作の月額プランを利用していますが、常に最新のトレンドを取り入れたデザインを提案してくれるので、サイトのアクセス数が増加し、問い合わせも倍増しました。コストパフォーマンスも非常に高く、満足しています。",
-    author: "佐藤 美咲",
-    position: "マーケティング部長",
+    name: "佐藤 美咲",
+    role: "マーケティング部長",
     company: "小売業",
+    content: "「SNS運用代行を依頼してから、フォロワー数が2倍に増加。効果的なコンテンツ提案と迅速な対応に感謝しています。」"
   },
   {
-    id: 3,
-    content:
-      "SNS運用代行サービスを利用して半年ですが、フォロワー数が3倍に増え、エンゲージメント率も大幅に向上しました。専門知識がなくても効果的なSNSマーケティングができるようになり、大変感謝しています。",
-    author: "鈴木 隆太",
-    position: "広報担当",
-    company: "サービス業",
-  },
+    name: "鈴木 一郎",
+    role: "経営企画部長",
+    company: "IT企業",
+    content: "「AIを活用した業務効率化の提案をいただき、大幅なコスト削減が実現。技術的な知識と実務経験の両方を持つコンサルタントとして、非常に信頼できます。」"
+  }
 ]
 
 export default function TestimonialSlider() {
@@ -58,14 +52,14 @@ export default function TestimonialSlider() {
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
+            <div key={testimonial.name} className="w-full flex-shrink-0 px-4">
               <Card className="bg-white shadow-md">
                 <CardContent className="p-8">
                   <Quote className="h-10 w-10 text-emerald-200 mb-4" />
                   <p className="text-lg mb-6 italic text-gray-700">{testimonial.content}</p>
                   <div>
-                    <p className="font-bold">{testimonial.author}</p>
-                    <p className="text-sm text-gray-500">{testimonial.position}</p>
+                    <p className="font-bold">{testimonial.name}</p>
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
                     <p className="text-sm text-gray-500">{testimonial.company}</p>
                   </div>
                 </CardContent>

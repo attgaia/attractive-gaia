@@ -1,87 +1,122 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { CheckCircle, ShoppingCart, TrendingUp, Settings, Target } from 'lucide-react';
-import Link from 'next/link';
+import { Card, CardContent } from "@/components/ui/card"
+import { ShoppingCart, Target, BarChart, Users, Settings, MessageCircle, ArrowLeft } from 'lucide-react';
+import Link from "next/link"
 
 const EcConsultingPage = () => {
   return (
-    <div className="container mx-auto py-12 md:py-20">
-      {/* ヒーローセクション */}
-      <section className="relative mb-16 md:mb-24 text-center rounded-lg overflow-hidden bg-gradient-to-r from-orange-500 to-yellow-500 py-24 md:py-32">
-        <div className="absolute inset-0 bg-black/30 mix-blend-multiply"></div> {/* オーバーレイ */}
-        <div className="relative z-10 px-4">
-          <ShoppingCart className="h-16 w-16 text-white mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">ECコンサルティング</h1>
-          <p className="text-lg md:text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
-            Amazon・Shopify・BASEなど各種プラットフォームに対応。<br />ECサイト構築から運営戦略、売上向上施策まで、オンライン販売の成功をトータルサポートします。
+    <div className="bg-orange-50 min-h-screen">
+      {/* 1. ファーストビュー（ヒーロー） */}
+      <section className="relative py-24 md:py-40 text-center overflow-hidden bg-gradient-to-b from-orange-100 to-orange-50">
+        <div className="container relative z-10">
+          <ShoppingCart className="h-16 w-16 text-orange-600 mx-auto mb-6 animate-pulse" />
+          <h1 className="text-4xl md:text-6xl font-bold text-orange-900 mb-4 leading-tight">ECコンサルティング</h1>
+          <p className="text-xl md:text-2xl text-gray-700 mb-6 max-w-2xl mx-auto">
+            あなたのECサイトを成功へ導く
+          </p>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            プロフェッショナルな視点で、<br />
+            ECサイトの運営・改善をサポートします。
           </p>
         </div>
       </section>
 
-      {/* サービス詳細セクション */}
-      <section className="mb-16 md:mb-24">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">ECビジネスの成長を加速させる支援</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="p-6">
-            <Settings className="h-10 w-10 text-emerald-600 mb-3" />
-            <h3 className="text-xl font-semibold mb-2 text-emerald-700">ECサイト構築・最適化</h3>
-            <p className="text-gray-600 text-sm">Shopify, BASE等の構築、既存サイトの改修・最適化。売れるサイト設計とデザインをご提案します。</p>
-          </Card>
-          <Card className="p-6">
-            <TrendingUp className="h-10 w-10 text-emerald-600 mb-3" />
-            <h3 className="text-xl font-semibold mb-2 text-emerald-700">売上向上戦略・施策実行</h3>
-            <p className="text-gray-600 text-sm">SEO、広告運用、SNS連携、CRM導入など、データに基づいた効果的なマーケティング戦略を立案・実行します。</p>
-          </Card>
-          <Card className="p-6">
-            <Target className="h-10 w-10 text-emerald-600 mb-3" />
-            <h3 className="text-xl font-semibold mb-2 text-emerald-700">Amazon出品・運用サポート</h3>
-            <p className="text-gray-600 text-sm">アカウント開設、商品登録、広告運用、SEO対策、レビュー獲得支援まで、Amazon販売を強力にバックアップします。</p>
-          </Card>
-        </div>
-      </section>
-
-      {/* メリットセクション */}
-      <section className="mb-16 md:mb-24 bg-gray-50 rounded-lg p-8 md:p-12">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">このサービスを選ぶメリット</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <CheckCircle className="h-12 w-12 text-emerald-500 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">多様なプラットフォーム対応</h3>
-            <p className="text-gray-600 text-sm">Amazon、Shopify、BASEなど、お客様の状況に最適なプラットフォームでの支援が可能です。</p>
+      {/* 2. サービス紹介セクション */}
+      <div className="container mx-auto py-16 md:py-24">
+        <section id="menu" className="mb-16 md:mb-24">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">🛍️ 対応メニュー一覧</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="p-6 bg-white shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-3">
+                <Target className="h-8 w-8 text-orange-600 mr-3 flex-shrink-0" />
+                <h3 className="text-lg font-semibold text-gray-900">ECサイト構築</h3>
+              </div>
+              <p className="text-sm text-gray-600">Shopify、BASE、楽天市場など、最適なプラットフォームの選定と構築。</p>
+            </Card>
+            <Card className="p-6 bg-white shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-3">
+                <BarChart className="h-8 w-8 text-orange-600 mr-3 flex-shrink-0" />
+                <h3 className="text-lg font-semibold text-gray-900">売上改善</h3>
+              </div>
+              <p className="text-sm text-gray-600">データ分析に基づく改善提案、コンバージョン率向上施策の実施。</p>
+            </Card>
+            <Card className="p-6 bg-white shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-3">
+                <Users className="h-8 w-8 text-orange-600 mr-3 flex-shrink-0" />
+                <h3 className="text-lg font-semibold text-gray-900">マーケティング</h3>
+              </div>
+              <p className="text-sm text-gray-600">SNS活用、メールマーケティング、SEO対策など、集客施策の提案。</p>
+            </Card>
+            <Card className="p-6 bg-white shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-3">
+                <Settings className="h-8 w-8 text-orange-600 mr-3 flex-shrink-0" />
+                <h3 className="text-lg font-semibold text-gray-900">運用サポート</h3>
+              </div>
+              <p className="text-sm text-gray-600">在庫管理、発送業務、カスタマーサポートなど、日常業務の効率化。</p>
+            </Card>
+            <Card className="p-6 bg-white shadow-md hover:shadow-lg transition-shadow">
+              <div className="flex items-center mb-3">
+                <ShoppingCart className="h-8 w-8 text-orange-600 mr-3 flex-shrink-0" />
+                <h3 className="text-lg font-semibold text-gray-900">商品企画</h3>
+              </div>
+              <p className="text-sm text-gray-600">市場調査、競合分析、商品ラインナップの最適化提案。</p>
+            </Card>
+            <Card className="p-6 bg-orange-100 border border-orange-200 flex flex-col justify-center items-center text-center">
+              <MessageCircle className="h-8 w-8 text-orange-700 mb-2" />
+              <p className="font-medium text-orange-800">「こんなECサイトを作りたい」というご相談もお気軽にどうぞ。</p>
+            </Card>
           </div>
-          <div className="text-center">
-            <CheckCircle className="h-12 w-12 text-emerald-500 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">データに基づいた改善提案</h3>
-            <p className="text-gray-600 text-sm">アクセス解析や売上データを分析し、具体的な改善施策を継続的にご提案します。</p>
-          </div>
-          <div className="text-center">
-            <CheckCircle className="h-12 w-12 text-emerald-500 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">最新トレンドを反映</h3>
-            <p className="text-gray-600 text-sm">常に変化するEC市場の最新動向や技術を取り入れ、競争力のあるECサイト運営を支援します。</p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ご利用の流れセクション (記事作成代行ページと同様) */}
-      <section className="mb-16 md:mb-24 bg-gray-100 rounded-lg p-8 md:p-12">
-         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">サービスご利用の流れ</h2>
-         {/* ... (内容は記事作成代行と同様のため省略) ... */}
-         <p className="text-center text-gray-500">(ここに「ご利用の流れ」セクションが入ります)</p>
-       </section>
-
-      {/* CTAセクション (記事作成代行ページと同様) */}
-      <section className="text-center bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-10 md:p-16">
-        <h2 className="text-3xl font-bold text-white mb-6">ECサイトの売上アップ・効率化のご相談</h2>
-        {/* ... (内容は記事作成代行と同様のため省略) ... */}
-        <p className="text-center text-emerald-100 mb-8">(ここにCTAセクションが入ります)</p>
-        <div className="flex justify-center space-x-4">
-          <Button size="lg" className="bg-white text-emerald-700 hover:bg-gray-100 shadow-lg">
-            <Link href="/free-consultation">無料相談フォームへ</Link>
-          </Button>
-        </div>
-      </section>
+        {/* 3. サービスご利用の流れ */}
+        <section id="flow" className="mb-16 md:mb-24">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">🔄 サービスご利用の流れ</h2>
+          <div className="relative max-w-xl mx-auto pl-10">
+            {/* 縦線 */}
+            <div className="absolute left-4 top-0 bottom-0 w-1 bg-orange-200 rounded-full"></div>
+            {/* ステップ */}
+            <div className="relative mb-10">
+              <div className="absolute left-[-1.75rem] top-0 h-10 w-10 bg-orange-600 rounded-full text-white flex items-center justify-center font-bold text-lg z-10 shadow">1</div>
+              <Card className="ml-6 bg-white p-4 shadow">
+                <h3 className="text-lg font-semibold mb-1 text-orange-800">【ヒアリング】</h3>
+                <p className="text-sm text-gray-600">現状の課題、目標、予算などをお伺いします。</p>
+              </Card>
+            </div>
+            <div className="relative mb-10">
+              <div className="absolute left-[-1.75rem] top-0 h-10 w-10 bg-orange-600 rounded-full text-white flex items-center justify-center font-bold text-lg z-10 shadow">2</div>
+              <Card className="ml-6 bg-white p-4 shadow">
+                <h3 className="text-lg font-semibold mb-1 text-orange-800">【分析・提案】</h3>
+                <p className="text-sm text-gray-600">データ分析に基づき、具体的な改善案をご提案します。</p>
+              </Card>
+            </div>
+            <div className="relative mb-10">
+              <div className="absolute left-[-1.75rem] top-0 h-10 w-10 bg-orange-600 rounded-full text-white flex items-center justify-center font-bold text-lg z-10 shadow">3</div>
+              <Card className="ml-6 bg-white p-4 shadow">
+                <h3 className="text-lg font-semibold mb-1 text-orange-800">【実施計画】</h3>
+                <p className="text-sm text-gray-600">改善施策の優先順位付けと実施スケジュールを策定します。</p>
+              </Card>
+            </div>
+            <div className="relative mb-10">
+              <div className="absolute left-[-1.75rem] top-0 h-10 w-10 bg-orange-600 rounded-full text-white flex items-center justify-center font-bold text-lg z-10 shadow">4</div>
+              <Card className="ml-6 bg-white p-4 shadow">
+                <h3 className="text-lg font-semibold mb-1 text-orange-800">【実行・サポート】</h3>
+                <p className="text-sm text-gray-600">改善施策を実施し、必要に応じてサポートを提供します。</p>
+              </Card>
+            </div>
+            <div className="relative">
+              <div className="absolute left-[-1.75rem] top-0 h-10 w-10 bg-orange-600 rounded-full text-white flex items-center justify-center font-bold text-lg z-10 shadow">5</div>
+              <Card className="ml-6 bg-white p-4 shadow">
+                <h3 className="text-lg font-semibold mb-1 text-orange-800">【効果測定】</h3>
+                <p className="text-sm text-gray-600">施策の効果を測定し、次の改善につなげます。</p>
+              </Card>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
