@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { getPosts } from '@/lib/graphql';
 import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export default function AllArticlesPage() {
   const [posts, setPosts] = useState([]);
@@ -59,7 +60,7 @@ export default function AllArticlesPage() {
   return (
     <div className="container mx-auto py-16">
       <div className="mb-8">
-        <Link href="/" className="text-emerald-600 hover:underline flex items-center">
+        <Link href="/" className="text-[#008B8B] hover:underline flex items-center">
           <ArrowLeft className="mr-2 h-4 w-4" />
           トップページに戻る
         </Link>
@@ -82,7 +83,7 @@ export default function AllArticlesPage() {
                 </div>
               )}
               <div className="p-6">
-                <div className="text-xs text-white bg-emerald-600/90 rounded-full px-2 py-1 inline-block mb-2">
+                <div className="text-xs text-white bg-[#008B8B] rounded-full px-2 py-1 inline-block mb-2">
                   {post.categories.nodes.map(cat => cat.name).join(', ')}
                 </div>
                 <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
@@ -92,7 +93,7 @@ export default function AllArticlesPage() {
                 />
                 <Link 
                   href={`/blog/${post.slug}`}
-                  className="text-sm font-medium text-emerald-600 hover:underline"
+                  className="text-sm font-medium text-[#008B8B] hover:underline"
                 >
                   続きを読む
                 </Link>
@@ -108,7 +109,7 @@ export default function AllArticlesPage() {
           variant="outline"
           onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
-          className="flex items-center"
+          className="flex items-center border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B]/5 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <ChevronLeft className="h-4 w-4 mr-1" />
           前へ
@@ -120,7 +121,12 @@ export default function AllArticlesPage() {
               key={i + 1}
               variant={currentPage === i + 1 ? "default" : "outline"}
               onClick={() => setCurrentPage(i + 1)}
-              className="w-8 h-8 p-0"
+              className={cn(
+                "w-8 h-8 p-0",
+                currentPage === i + 1 
+                  ? "bg-[#008B8B] text-white hover:bg-[#40E0D0]"
+                  : "border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B]/5"
+              )}
             >
               {i + 1}
             </Button>
@@ -131,7 +137,7 @@ export default function AllArticlesPage() {
           variant="outline"
           onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
           disabled={currentPage === totalPages}
-          className="flex items-center"
+          className="flex items-center border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B]/5 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           次へ
           <ChevronRight className="h-4 w-4 ml-1" />
