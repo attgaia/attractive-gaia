@@ -53,7 +53,7 @@ function ArticleList() {
               {post.title}
             </h3>
             <p className="text-sm text-gray-700 line-clamp-2">
-              {post.excerpt}
+              {post.excerpt?.replace(/<[^>]+>/g, '')}
             </p>
             <div className="flex items-center text-xs text-gray-500">
               {post.author?.node?.avatar?.url && (
