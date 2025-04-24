@@ -8,7 +8,7 @@ const TermsOfServicePage = () => {
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8 md:p-12">
         <div className="prose prose-lg max-w-none">
           <p className="text-gray-600 mb-8">
-            この利用規約（以下「本規約」）は、株式会社Attractive Gaia（以下「当社」）が提供するサービス（以下「本サービス」）の利用条件を定めるものです。本サービスを利用するすべてのユーザー（以下「ユーザー」）は、本規約に同意したものとみなされます。
+            この利用規約（以下「本規約」）は、アトラクティブガイア株式会社（以下「当社」）が提供するサービス（以下「本サービス」）の利用条件を定めるものです。本サービスを利用するすべてのユーザー（以下「ユーザー」）は、本規約に同意したものとみなされます。
           </p>
 
           <h2 className="text-2xl font-bold text-gray-800 mb-4">第1条（適用）</h2>
@@ -93,8 +93,8 @@ const TermsOfServicePage = () => {
           </p>
 
           <p className="text-gray-600 mt-8">
-            制定日：2024年3月1日<br />
-            最終更新日：2024年3月1日
+            制定日：2025年4月23日<br />
+            最終更新日：2025年4月23日
           </p>
         </div>
       </div>

@@ -11,27 +11,23 @@ const CommercialTransactionPage = () => {
             <tbody>
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50 w-1/3">販売業者</th>
-                <td className="py-4 px-4">株式会社Attractive Gaia</td>
+                <td className="py-4 px-4">アトラクティブガイア株式会社</td>
               </tr>
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50">代表者</th>
-                <td className="py-4 px-4">代表取締役</td>
+                <td className="py-4 px-4">村山慎也</td>
               </tr>
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50">所在地</th>
-                <td className="py-4 px-4">東京都渋谷区神宮前1-1-1</td>
-              </tr>
-              <tr className="border-b">
-                <th className="py-4 px-4 text-left bg-gray-50">電話番号</th>
-                <td className="py-4 px-4">03-1234-5678</td>
+                <td className="py-4 px-4">群馬県伊勢崎市上泉町235</td>
               </tr>
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50">メールアドレス</th>
-                <td className="py-4 px-4">info@attractive-gaia.com</td>
+                <td className="py-4 px-4">info@attgaia.com</td>
               </tr>
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50">URL</th>
-                <td className="py-4 px-4">https://attractive-gaia.com</td>
+                <td className="py-4 px-4">https://attgaia.com</td>
               </tr>
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50">商品代金以外の必要料金</th>
@@ -46,7 +42,7 @@ const CommercialTransactionPage = () => {
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50">商品引渡し時期</th>
                 <td className="py-4 px-4">
-                  ご注文後、お支払い確認後3営業日以内に納品いたします。<br />
+                  ご注文後、お支払い確認後7営業日以内に納品いたします。<br />
                   ただし、商品の特性上、納期が異なる場合は事前にご連絡いたします。
                 </td>
               </tr>
@@ -98,7 +94,7 @@ const CommercialTransactionPage = () => {
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50">役務または商品の引渡し時期</th>
                 <td className="py-4 px-4">
-                  ご注文後、お支払い確認後3営業日以内に納品いたします。<br />
+                  ご注文後、お支払い確認後7営業日以内に納品いたします。<br />
                   ただし、商品の特性上、納期が異なる場合は事前にご連絡いたします。
                 </td>
               </tr>
@@ -106,8 +102,8 @@ const CommercialTransactionPage = () => {
           </table>
 
           <p className="text-gray-600 mt-8">
-            制定日：2024年3月1日<br />
-            最終更新日：2024年3月1日
+            制定日：2025年4月23日<br />
+            最終更新日：2025年4月23日
           </p>
         </div>
       </div>

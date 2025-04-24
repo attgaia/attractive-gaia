@@ -8,7 +8,7 @@ const PrivacyPolicyPage = () => {
       <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8 md:p-12">
         <div className="prose prose-lg max-w-none">
           <p className="text-gray-600 mb-8">
-            株式会社Attractive Gaia（以下「当社」）は、お客様の個人情報の保護を重要な責務と認識し、以下のプライバシーポリシーに基づき、適切な管理・保護に努めます。
+            アトラクティブガイア株式会社（以下「当社」）は、お客様の個人情報の保護を重要な責務と認識し、以下のプライバシーポリシーに基づき、適切な管理・保護に努めます。
           </p>
 
           <h2 className="text-2xl font-bold text-gray-800 mb-4">1. 個人情報の定義</h2>
@@ -72,15 +72,15 @@ const PrivacyPolicyPage = () => {
           </p>
           <div className="mt-4 p-4 bg-gray-50 rounded-lg">
             <p className="text-gray-600">
-              株式会社Attractive Gaia<br />
-              個人情報保護管理者：代表取締役<br />
-              メールアドレス：privacy@attractive-gaia.com
+              アトラクティブガイア株式会社<br />
+              個人情報保護管理者：代表取締役 村山慎也<br />
+              メールアドレス：info@attgaia.com
             </p>
           </div>
 
           <p className="text-gray-600 mt-8">
-            制定日：2024年3月1日<br />
-            最終更新日：2024年3月1日
+            制定日：2025年4月23日<br />
+            最終更新日：2025年4月23日
           </p>
         </div>
       </div>
