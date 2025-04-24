@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { getWorksPosts } from '@/lib/graphql';
 import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export default function WorksPage() {
   const [works, setWorks] = useState([]);
@@ -59,7 +60,7 @@ export default function WorksPage() {
   return (
     <div className="container mx-auto py-16">
       <div className="mb-8">
-        <Link href="/" className="text-emerald-600 hover:underline flex items-center">
+        <Link href="/" className="text-[#008B8B] hover:text-[#40E0D0] transition-colors flex items-center">
           <ArrowLeft className="mr-2 h-4 w-4" />
           トップページに戻る
         </Link>
@@ -89,7 +90,7 @@ export default function WorksPage() {
                 />
                 <Link 
                   href={`/works/${work.slug}`}
-                  className="text-sm font-medium text-[#008B8B] hover:underline"
+                  className="text-sm font-medium text-[#008B8B] hover:text-[#40E0D0] transition-colors"
                 >
                   詳細を見る
                 </Link>
@@ -105,7 +106,7 @@ export default function WorksPage() {
           variant="outline"
           onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
-          className="flex items-center"
+          className="flex items-center border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <ChevronLeft className="h-4 w-4 mr-1" />
           前へ
@@ -117,7 +118,12 @@ export default function WorksPage() {
               key={i + 1}
               variant={currentPage === i + 1 ? "default" : "outline"}
               onClick={() => setCurrentPage(i + 1)}
-              className="w-8 h-8 p-0"
+              className={cn(
+                "w-8 h-8 p-0 transition-colors",
+                currentPage === i + 1 
+                  ? "bg-[#008B8B] text-white hover:bg-[#40E0D0]"
+                  : "border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B] hover:text-white"
+              )}
             >
               {i + 1}
             </Button>
@@ -128,7 +134,7 @@ export default function WorksPage() {
           variant="outline"
           onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
           disabled={currentPage === totalPages}
-          className="flex items-center"
+          className="flex items-center border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B] hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           次へ
           <ChevronRight className="h-4 w-4 ml-1" />
