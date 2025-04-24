@@ -22,7 +22,7 @@ export default function AboutPage() {
           <section className="mb-20">
             <h2 className="text-3xl font-bold text-center mb-8">企業理念</h2>
             <div className="max-w-3xl mx-auto text-center">
-              <p className="text-2xl font-bold text-emerald-700 mb-6">
+              <p className="text-2xl font-bold text-[#008B8B] mb-6">
                 地球環境に優しく銀河系を代表する会社を創る
               </p>
               <div className="bg-white p-8 rounded-lg shadow-lg mb-8">
