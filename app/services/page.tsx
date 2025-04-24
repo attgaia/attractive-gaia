@@ -168,19 +168,20 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-8 text-white">
+          {/* お問い合わせセクション */}
+          <section className="mt-16 md:mt-24 bg-gradient-to-r from-[#008B8B] to-[#40E0D0] rounded-lg p-8 text-white">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div>
                 <h3 className="text-xl font-bold mb-2">お探しのサービスが見つからない場合</h3>
-                <p className="text-gray-100">
+                <p className="text-white/80">
                   ご要望に合わせたカスタムサービスもご提案可能です。まずはお気軽にご相談ください。
                 </p>
               </div>
-              <Button className="mt-4 md:mt-0 bg-white text-emerald-700 hover:bg-gray-100">
+              <Button className="mt-4 md:mt-0 bg-white text-[#008B8B] hover:bg-white/90">
                 <Link href="/free-consultation">無料相談する</Link>
               </Button>
             </div>
-          </div>
+          </section>
         </div>
       </main>
     </div>

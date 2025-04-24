@@ -131,14 +131,14 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-1">
         {/* 新しいヒーローセクション */}
-        <section className="relative h-screen overflow-hidden bg-gradient-to-br from-teal-900 via-emerald-800 to-teal-900 text-white">
+        <section className="relative h-screen overflow-hidden bg-gradient-to-br from-[#008B8B] via-[#008B8B]/80 to-[#40E0D0] text-white">
           {/* アニメーション背景 */}
           <div className="absolute inset-0 opacity-70">
             <HeroAnimation />
           </div>
 
           {/* オーバーレイグラデーション */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-teal-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#008B8B]/80"></div>
 
           <div className="container relative z-10 h-full flex flex-col justify-center items-center text-center">
             <motion.div
@@ -146,7 +146,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Badge className="mb-6 bg-emerald-400/20 text-emerald-100 hover:bg-emerald-400/30 border-emerald-400/30 backdrop-blur-sm">
+              <Badge className="mb-6 bg-[#008B8B]/20 text-white hover:bg-[#008B8B]/30 border-[#008B8B]/30 backdrop-blur-sm">
                 AI技術で企業の未来を創造する
               </Badge>
             </motion.div>
@@ -157,7 +157,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-4xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight"
             >
-              AIで<span className="text-emerald-300">ビジネスの可能性</span>を<br className="hidden md:block" />
+              AIで<span className="text-[#40E0D0]">ビジネスの可能性</span>を<br className="hidden md:block" />
               無限に広げる
             </motion.h1>
 
@@ -342,15 +342,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-8 text-white">
+            <div className="bg-gradient-to-r from-[#008B8B] to-[#40E0D0] rounded-lg p-8 text-white">
               <div className="flex flex-col md:flex-row items-center justify-between">
                 <div>
                   <h3 className="text-xl font-bold mb-2">お探しのサービスが見つからない場合</h3>
-                  <p className="text-gray-100">
+                  <p className="text-white/80">
                     ご要望に合わせたカスタムサービスもご提案可能です。まずはお気軽にご相談ください。
                   </p>
                 </div>
-                <Button className="mt-4 md:mt-0 bg-white text-emerald-700 hover:bg-gray-100">
+                <Button className="mt-4 md:mt-0 bg-white text-[#008B8B] hover:bg-white/90">
                   <Link href="/free-consultation">無料相談する</Link>
                 </Button>
               </div>

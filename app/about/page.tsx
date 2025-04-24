@@ -146,15 +146,15 @@ export default function AboutPage() {
           </section>
 
           {/* お問い合わせセクション */}
-          <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-8 text-white">
+          <div className="bg-gradient-to-r from-[#008B8B] to-[#40E0D0] rounded-lg p-8 text-white">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div>
                 <h3 className="text-xl font-bold mb-2">お問い合わせ</h3>
-                <p className="text-gray-100">
+                <p className="text-white/80">
                   サービスに関するご質問やご相談は、お気軽にお問い合わせください。
                 </p>
               </div>
-              <Button className="mt-4 md:mt-0 bg-white text-emerald-700 hover:bg-gray-100">
+              <Button className="mt-4 md:mt-0 bg-white text-[#008B8B] hover:bg-white/90">
                 <Link href="/contact">お問い合わせする</Link>
               </Button>
             </div>

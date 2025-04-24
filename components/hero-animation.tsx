@@ -25,10 +25,10 @@ export default function HeroAnimation() {
     const particlesArray: Particle[] = []
     const numberOfParticles = 100 // パーティクル数を増やす
     const colors = [
-      "rgba(16, 185, 129, 0.2)", // エメラルド
-      "rgba(6, 182, 212, 0.2)", // シアン
-      "rgba(59, 130, 246, 0.2)", // ブルー
-      "rgba(16, 185, 129, 0.1)", // 薄いエメラルド
+      "rgba(0, 139, 139, 0.2)", // ブルーグリーン
+      "rgba(64, 224, 208, 0.2)", // ターコイズ
+      "rgba(0, 139, 139, 0.1)", // 薄いブルーグリーン
+      "rgba(64, 224, 208, 0.1)", // 薄いターコイズ
     ]
 
     class Particle {
@@ -99,7 +99,7 @@ export default function HeroAnimation() {
 
           if (distance < maxDistance) {
             const opacity = 1 - distance / maxDistance
-            ctx.strokeStyle = `rgba(16, 185, 129, ${opacity * 0.15})`
+            ctx.strokeStyle = `rgba(0, 139, 139, ${opacity * 0.15})`
             ctx.lineWidth = 1
             ctx.beginPath()
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y)
@@ -132,7 +132,7 @@ export default function HeroAnimation() {
       }
 
       draw() {
-        ctx.strokeStyle = `rgba(16, 185, 129, ${this.opacity})`
+        ctx.strokeStyle = `rgba(64, 224, 208, ${this.opacity})`
         ctx.lineWidth = 2
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
@@ -162,8 +162,8 @@ export default function HeroAnimation() {
 
       // グラデーション背景
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
-      gradient.addColorStop(0, "rgba(6, 182, 212, 0.05)")
-      gradient.addColorStop(1, "rgba(16, 185, 129, 0.05)")
+      gradient.addColorStop(0, "rgba(0, 139, 139, 0.05)")
+      gradient.addColorStop(1, "rgba(64, 224, 208, 0.05)")
       ctx.fillStyle = gradient
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 

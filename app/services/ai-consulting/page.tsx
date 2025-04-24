@@ -53,20 +53,20 @@ const AiConsultingPage = () => {
       <section className="mb-16 md:mb-24">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">"人が足りない"時代にAIという選択肢を</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300">
+          <Card className="bg-gradient-to-br from-[#008B8B] to-[#40E0D0] text-white shadow-lg hover:shadow-xl transition-all duration-300">
             <CardHeader className="space-y-2">
               <CardTitle className="text-2xl font-bold">AIコンサルティング</CardTitle>
-              <CardDescription className="text-blue-100">
+              <CardDescription className="text-white/80">
                 最先端のAI技術を活用したビジネスソリューション
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-blue-100">
+              <p className="text-white/80">
                 当社のAIコンサルティングサービスでは、お客様のビジネスに最適なAIソリューションを提案し、実装までサポートいたします。
               </p>
             </CardContent>
             <CardFooter>
-              <Button variant="secondary" className="bg-white text-blue-700 hover:bg-blue-100 w-full">
+              <Button variant="secondary" className="bg-white text-[#008B8B] hover:bg-white/90 w-full">
                 詳細を見る
               </Button>
             </CardFooter>
