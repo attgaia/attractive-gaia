@@ -6,61 +6,52 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300 py-12">
       <div className="container">
         <div className="flex justify-center mb-8">
-          <Link href="/" className="font-bold text-xl text-emerald-400">
-            ATTRACTIVE GAIA
+          <Link href="/" className="font-bold text-xl text-secondary">
+            ATT GAIA
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h4 className="text-white font-medium mb-4">サービス</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
-                  AI支援コンサルティング
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
-                  Web制作サービス
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
-                  コンテンツ制作
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
-                  ECコンサルティング
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
-                  すべてのサービス
-                </Link>
-              </li>
-            </ul>
+            <nav className="flex flex-col gap-2">
+              <h3 className="font-semibold mb-2">サービス</h3>
+              <Link href="#" className="hover:text-secondary transition-colors">
+                AI支援サービス
+              </Link>
+              <Link href="#" className="hover:text-secondary transition-colors">
+                Webサイト制作
+              </Link>
+              <Link href="#" className="hover:text-secondary transition-colors">
+                ブランディング
+              </Link>
+              <Link href="#" className="hover:text-secondary transition-colors">
+                オリジナル商品開発
+              </Link>
+              <Link href="#" className="hover:text-secondary transition-colors">
+                集客支援
+              </Link>
+            </nav>
           </div>
           <div>
             <h4 className="text-white font-medium mb-4">メディア</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   最新記事
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   AI活用事例
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   ビジネストレンド
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   お役立ち情報
                 </Link>
               </li>
@@ -70,22 +61,22 @@ export default function Footer() {
             <h4 className="text-white font-medium mb-4">会社情報</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   会社概要
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   ミッション
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   経営陣
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   採用情報
                 </Link>
               </li>
@@ -95,12 +86,12 @@ export default function Footer() {
             <h4 className="text-white font-medium mb-4">お問い合わせ</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/contact" className="hover:text-emerald-400 transition-colors">
+                <Link href="/contact" className="hover:text-secondary transition-colors">
                   お問い合わせフォーム
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-emerald-400 transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   LINE公式アカウント
                 </Link>
               </li>
@@ -108,7 +99,7 @@ export default function Footer() {
             <div className="mt-6">
               <h4 className="text-white font-medium mb-2">SNS</h4>
               <div className="flex space-x-4">
-                <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#" className="text-gray-300 hover:text-secondary transition-colors">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -123,7 +114,7 @@ export default function Footer() {
                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                   </svg>
                 </Link>
-                <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#" className="text-gray-300 hover:text-secondary transition-colors">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -140,7 +131,7 @@ export default function Footer() {
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                   </svg>
                 </Link>
-                <Link href="#" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="#" className="text-gray-300 hover:text-secondary transition-colors">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -166,13 +157,13 @@ export default function Footer() {
               © 2025 Attractive Gaia. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <Link href="/privacy" className="hover:text-emerald-400 transition-colors">
+              <Link href="/privacy" className="hover:text-secondary transition-colors">
                 プライバシーポリシー
               </Link>
-              <Link href="/terms" className="hover:text-emerald-400 transition-colors">
+              <Link href="/terms" className="hover:text-secondary transition-colors">
                 利用規約
               </Link>
-              <Link href="/commercial-transaction" className="hover:text-emerald-400 transition-colors">
+              <Link href="/commercial-transaction" className="hover:text-secondary transition-colors">
                 特定商取引法に基づく表記
               </Link>
             </div>

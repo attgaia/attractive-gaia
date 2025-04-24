@@ -13,13 +13,13 @@ export default function Header() {
           <Image src="/images/logo_attractivegaia.png" alt="ATT GAIA" width={300} height={40} className="object-contain" />
         </Link>
         <nav className="flex gap-6">
-          <Link href="/services" className="text-sm font-medium hover:text-emerald-600 transition-colors">
+          <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">
             サービス一覧
           </Link>
-          <Link href="/works" className="text-sm font-medium hover:text-emerald-600 transition-colors">
+          <Link href="/works" className="text-sm font-medium hover:text-primary transition-colors">
             成功事例
           </Link>
-          <Link href="/about" className="text-sm font-medium hover:text-emerald-600 transition-colors">
+          <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">
             企業情報
           </Link>
         </nav>

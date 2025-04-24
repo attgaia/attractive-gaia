@@ -116,7 +116,7 @@ export default function ServiceCard({ title, description, icon, featured = false
         "relative overflow-hidden transition-all duration-300 cursor-pointer",
         featured ? "col-span-full" : "",
         isHovered ? "shadow-lg transform -translate-y-1" : "shadow",
-        isHovered ? "bg-gradient-to-br from-emerald-50 to-teal-50" : "bg-white",
+        isHovered ? "bg-gradient-to-br from-primary/10 to-secondary/10" : "bg-white",
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -126,17 +126,17 @@ export default function ServiceCard({ title, description, icon, featured = false
           className={cn(
             "flex items-center justify-center rounded-full p-3 mb-4",
             featured ? "h-16 w-16 md:mb-0" : "h-12 w-12",
-            isHovered ? "bg-emerald-500 text-white" : "bg-emerald-100 text-emerald-600",
+            isHovered ? "bg-primary text-white" : "bg-primary/10 text-primary",
           )}
         >
-          {IconComponent && <IconComponent className={cn("h-6 w-6", isHovered ? "text-white" : "text-emerald-600")} />}
+          {IconComponent && <IconComponent className={cn("h-6 w-6", isHovered ? "text-white" : "text-primary")} />}
         </div>
         <div className={cn(featured ? "md:flex-1 w-full" : "", "flex flex-col h-full w-full")}>
           <h3
             className={cn(
               "font-bold transition-colors",
               featured ? "text-2xl mb-2" : "text-lg mb-1",
-              isHovered ? "text-emerald-600" : "text-gray-900",
+              isHovered ? "text-primary" : "text-gray-900",
             )}
           >
             {title}
@@ -148,7 +148,7 @@ export default function ServiceCard({ title, description, icon, featured = false
             <Button
               className={cn(
                 "w-full justify-between py-3 font-bold text-white transition-all duration-300",
-                "bg-emerald-600 hover:bg-emerald-700",
+                "bg-primary hover:bg-primary/90",
                 "shadow-md hover:shadow-lg",
                 "border-0",
                 isHovered ? "transform translate-y-0" : "",

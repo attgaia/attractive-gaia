@@ -25,12 +25,12 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#008B8B",
+          foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#40E0D0",
+          foreground: "#ffffff",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -41,8 +41,8 @@ const config: Config = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#40E0D0",
+          foreground: "#008B8B",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -58,6 +58,8 @@ const config: Config = {
         "ai-gradient-end": "#6366f1",    // 青紫
       },
       backgroundImage: {
+        'primary-gradient': 'linear-gradient(to right, #008B8B, #40E0D0)',
+        'secondary-gradient': 'linear-gradient(to right, #40E0D0, #008B8B)',
         // ✅ 追加：AI支援専用グラデーション
         "ai-gradient": "linear-gradient(to right, #0ea5e9, #6366f1)",
       },
