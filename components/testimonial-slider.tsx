@@ -55,7 +55,7 @@ export default function TestimonialSlider() {
             <div key={testimonial.name} className="w-full flex-shrink-0 px-4">
               <Card className="bg-white shadow-md">
                 <CardContent className="p-8">
-                  <Quote className="h-10 w-10 text-emerald-200 mb-4" />
+                  <Quote className="h-10 w-10 text-[#40E0D0] mb-4" />
                   <p className="text-lg mb-6 italic text-gray-700">{testimonial.content}</p>
                   <div>
                     <p className="font-bold">{testimonial.name}</p>
@@ -71,18 +71,18 @@ export default function TestimonialSlider() {
 
       <button
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 z-10"
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#008B8B] z-10"
         aria-label="前のスライド"
       >
-        <ChevronLeft className="h-6 w-6 text-emerald-600" />
+        <ChevronLeft className="h-6 w-6 text-[#008B8B]" />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 z-10"
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#008B8B] z-10"
         aria-label="次のスライド"
       >
-        <ChevronRight className="h-6 w-6 text-emerald-600" />
+        <ChevronRight className="h-6 w-6 text-[#008B8B]" />
       </button>
 
       <div className="flex justify-center mt-6 space-x-2">
@@ -92,7 +92,7 @@ export default function TestimonialSlider() {
             onClick={() => setActiveIndex(index)}
             className={cn(
               "w-3 h-3 rounded-full transition-colors",
-              index === activeIndex ? "bg-emerald-600" : "bg-emerald-200",
+              index === activeIndex ? "bg-[#008B8B]" : "bg-[#40E0D0]/40",
             )}
             aria-label={`スライド ${index + 1} に移動`}
           />

@@ -89,7 +89,7 @@ export default function WorksPage() {
                 />
                 <Link 
                   href={`/works/${work.slug}`}
-                  className="text-sm font-medium text-emerald-600 hover:underline"
+                  className="text-sm font-medium text-[#008B8B] hover:underline"
                 >
                   詳細を見る
                 </Link>

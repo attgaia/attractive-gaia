@@ -46,7 +46,7 @@ function ArticleList() {
             </div>
           )}
           <div className="space-y-2 p-4">
-            <div className="text-xs text-white bg-emerald-600/90 rounded-full px-2 py-1 inline-block">
+            <div className="text-xs text-white bg-[#008B8B] rounded-full px-2 py-1 inline-block">
               {post.categories.nodes.map(cat => cat.name).join(', ')}
             </div>
             <h3 className="text-xl font-semibold text-gray-900 group-hover:text-primary">
@@ -72,7 +72,7 @@ function ArticleList() {
         </Link>
       ))}
       <div className="col-span-full flex justify-center mt-8">
-        <Link href="/all-articles" className="inline-block bg-emerald-600 text-white py-2 px-4 rounded hover:bg-emerald-700 transition text-center">記事一覧はこちら</Link>
+        <Link href="/all-articles" className="inline-block bg-[#008B8B] text-white py-2 px-4 rounded hover:bg-[#008B8B]/90 transition text-center">記事一覧はこちら</Link>
       </div>
     </div>
   );
@@ -112,7 +112,7 @@ function WorksList() {
               />
               <Link 
                 href={`/works/${work.slug}`} 
-                className="text-sm font-medium text-emerald-600 hover:underline"
+                className="text-sm font-medium text-[#008B8B] hover:underline"
               >
                 詳細を見る
               </Link>
@@ -175,7 +175,7 @@ export default function Home() {
             <div className="relative z-10 flex justify-center w-full mb-16 pointer-events-auto">
               <a
                 href="/services/ai-consulting"
-                className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg px-8 py-4 rounded-md transition-colors duration-200"
+                className="inline-block bg-[#FFA500] hover:bg-[#FF8C00] text-white font-bold text-lg px-8 py-4 rounded-md transition-colors duration-200"
               >
                 AI支援サービスを見る <ArrowRight className="inline-block align-middle ml-2 h-5 w-5" />
               </a>
@@ -364,7 +364,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-center mb-12">制作実例</h2>
             <WorksList />
             <div className="text-center">
-              <Button variant="outline" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
+              <Button variant="outline" className="border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B]/5">
                 <Link href="/works" className="flex items-center">
                   すべての実例を見る
                   <ArrowRight className="ml-2 h-4 w-4" />

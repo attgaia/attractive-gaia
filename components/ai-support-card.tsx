@@ -22,7 +22,7 @@ const AiSupportCard = () => {
           カスタムAIシステムの開発まで対応可能です。
         </p>
         <Link href="/services/ai-consulting">
-          <Button className="bg-white text-emerald-700 hover:bg-white/90 font-semibold">
+          <Button className="bg-white text-[#008B8B] hover:bg-white/90 font-semibold">
             詳細を見る
           </Button>
         </Link>
