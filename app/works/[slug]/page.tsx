@@ -45,7 +45,7 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
     return (
       <div className="container mx-auto py-16">
         <h1 className="text-2xl font-bold mb-8">記事が見つかりませんでした</h1>
-        <Link href="/works" className="text-emerald-600 hover:underline flex items-center">
+        <Link href="/works" className="text-[#008B8B] hover:text-[#40E0D0] transition-colors flex items-center">
           <ArrowLeft className="mr-2 h-4 w-4" />
           制作実例一覧に戻る
         </Link>
@@ -55,7 +55,7 @@ export default function WorkDetail({ params }: { params: { slug: string } }) {
 
   return (
     <article className="container mx-auto py-16">
-      <Link href="/works" className="text-emerald-600 hover:underline flex items-center mb-8">
+      <Link href="/works" className="text-[#008B8B] hover:text-[#40E0D0] transition-colors flex items-center mb-8">
         <ArrowLeft className="mr-2 h-4 w-4" />
         制作実例一覧に戻る
       </Link>
