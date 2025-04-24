@@ -60,7 +60,7 @@ export default function WorksPage() {
   return (
     <div className="container mx-auto py-16">
       <div className="mb-8">
-        <Link href="/" className="text-[#008B8B] hover:text-[#40E0D0] transition-colors flex items-center">
+        <Link href="/" className="text-[#008B8B] hover:text-[#007070] transition-colors flex items-center">
           <ArrowLeft className="mr-2 h-4 w-4" />
           トップページに戻る
         </Link>
