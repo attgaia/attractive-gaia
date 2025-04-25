@@ -41,7 +41,7 @@ export default function ConfirmPage() {
       });
 
       const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbxTB2w-tLqtvvcB070n1RJcB_jOAvV7adrhOqvqzfAhGZXCD8QxTF-9vybHiwkZ9UQM/exec',
+        'https://script.google.com/macros/s/AKfycbxwzJmpoIIdE1e98OL0nNltm7Mp7jDQjJzx5z_PaWferl-CQHKqiuH3wPLxDVrhCAL6/exec',
         {
           method: 'POST',
           headers: {
