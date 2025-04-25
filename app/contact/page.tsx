@@ -291,7 +291,7 @@ export default function ContactPage() {
                 )}
               />
 
-              <div className="flex justify-end">
+              <div className="flex justify-center">
                 <Button 
                   type="submit" 
                   className="bg-[#008B8B] hover:bg-[#007070] text-white px-8"
