@@ -1,20 +1,23 @@
 import React from 'react';
-import Header from '@/components/layout/Header';
 import Footer from '@/components/Footer';
 import type { Metadata } from 'next'
 import './globals.css'
+import { Inter } from 'next/font/google';
+import { SiteHeader } from '@/components/site-header';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Attractive Gaia',
-  description: 'AI活用で業務効率と商品開発とWeb集客を一括サポート',
+  title: 'ATT GAIA',
+  description: '地球環境に優しく銀河系を代表する会社を創る',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <body>
+      <body className={inter.className}>
         <div className="flex flex-col min-h-screen">
-          <Header />
+          <SiteHeader />
           <main className="flex-1">
             {children}
           </main>
