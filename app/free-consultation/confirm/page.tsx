@@ -54,7 +54,7 @@ export default function ConsultationConfirmPage() {
       });
 
       const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbzjMtYYQLDqdYr5mBdiPrYoloQ9SmO0SofwFeXq2L0nYV2ewOkf8LztZWM-5J2UMRxV/exec',
+        'https://script.google.com/macros/s/AKfycbyN5XX_iVpUuIQ9YtnafMvSo4Vckbv0zJ2V_y9y696RJfPwruU4HmDo3SSN1NwPYdGv/exec',
         {
           method: 'POST',
           headers: {
