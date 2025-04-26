@@ -1,10 +1,11 @@
 'use client';
 
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
+import { FormProvider, useFormContext } from '@/components/context/FormContext';
 
 type ConfirmFieldProps = {
   label: string;
@@ -22,28 +23,20 @@ const ConfirmField = ({ label, value, required }: ConfirmFieldProps) => (
   </div>
 );
 
-export default function ConsultationConfirmPage() {
-  const searchParams = useSearchParams();
+function InnerConsultationConfirmPage() {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { consultationForm } = useFormContext();
 
-  const formData = {
-    companyName: searchParams.get('companyName') || '',
-    name: searchParams.get('name') || '',
-    department: searchParams.get('department') || '',
-    position: searchParams.get('position') || '',
-    email: searchParams.get('email') || '',
-    phone: searchParams.get('phone') || '',
-    address: searchParams.get('address') || '',
-    consultationType: searchParams.get('consultationType') || '',
-    message: searchParams.get('message') || '',
-  };
+  const formData = consultationForm;
 
-  const consultationTypeMap = {
+  const consultationTypeMap: Record<string, string> = {
     business: '事業相談',
     technical: '技術相談',
     other: 'その他',
   };
+
+  const consultationTypeValue = formData.consultationType ? consultationTypeMap[formData.consultationType] || formData.consultationType : '';
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
@@ -52,7 +45,6 @@ export default function ConsultationConfirmPage() {
       Object.entries(formData).forEach(([key, value]) => {
         if (value) params.append(key, value);
       });
-
       const response = await fetch(
         'https://script.google.com/macros/s/AKfycbyN5XX_iVpUuIQ9YtnafMvSo4Vckbv0zJ2V_y9y696RJfPwruU4HmDo3SSN1NwPYdGv/exec',
         {
@@ -63,7 +55,6 @@ export default function ConsultationConfirmPage() {
           body: params.toString(),
         }
       );
-
       if (response.ok) {
         router.push('/free-consultation/complete');
       } else {
@@ -81,50 +72,16 @@ export default function ConsultationConfirmPage() {
     <div className="container mx-auto px-4 py-8">
       <h1 className="mb-8 text-2xl font-bold">入力内容の確認</h1>
       <div className="space-y-6 mb-8">
-        <ConfirmField
-          label="法人名・屋号名・団体名"
-          value={formData.companyName}
-          required
-        />
-        <ConfirmField
-          label="お名前"
-          value={formData.name}
-          required
-        />
-        <ConfirmField
-          label="部署名"
-          value={formData.department}
-        />
-        <ConfirmField
-          label="役職名"
-          value={formData.position}
-        />
-        <ConfirmField
-          label="メールアドレス"
-          value={formData.email}
-          required
-        />
-        <ConfirmField
-          label="電話番号"
-          value={formData.phone}
-        />
-        <ConfirmField
-          label="所在地"
-          value={formData.address}
-          required
-        />
-        <ConfirmField
-          label="無料相談の種類"
-          value={consultationTypeMap[formData.consultationType as keyof typeof consultationTypeMap] || formData.consultationType}
-          required
-        />
-        <ConfirmField
-          label="無料相談内容"
-          value={formData.message}
-          required
-        />
+        <ConfirmField label="法人名・屋号名・団体名" value={formData.companyName || ''} required />
+        <ConfirmField label="お名前" value={formData.name || ''} required />
+        <ConfirmField label="部署名" value={formData.department || ''} />
+        <ConfirmField label="役職名" value={formData.position || ''} />
+        <ConfirmField label="メールアドレス" value={formData.email || ''} required />
+        <ConfirmField label="電話番号" value={formData.phone || ''} />
+        <ConfirmField label="所在地" value={formData.address || ''} required />
+        <ConfirmField label="無料相談の種類" value={consultationTypeValue} required />
+        <ConfirmField label="無料相談内容" value={formData.message || ''} required />
       </div>
-
       <div className="flex flex-col items-center gap-4">
         <Link
           href="/free-consultation"
@@ -142,5 +99,13 @@ export default function ConsultationConfirmPage() {
         </Button>
       </div>
     </div>
+  );
+}
+
+export default function ConsultationConfirmPageWithProvider() {
+  return (
+    <FormProvider>
+      <InnerConsultationConfirmPage />
+    </FormProvider>
   );
 } 

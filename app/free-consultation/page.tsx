@@ -24,6 +24,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { FormProvider, useFormContext } from '@/components/context/FormContext';
 
 const formSchema = z.object({
   companyName: z.string().min(1, { message: '法人名・屋号名・団体名を入力してください' }),
@@ -53,25 +54,16 @@ const OptionalBadge = () => (
   </span>
 );
 
-export default function ConsultationPage() {
+function InnerConsultationPage() {
   const router = useRouter();
+  const { consultationForm, setConsultationForm } = useFormContext();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      companyName: '',
-      name: '',
-      department: '',
-      position: '',
-      email: '',
-      emailConfirm: '',
-      phone: '',
-      address: '',
-      consultationType: '',
-      message: '',
-    },
+    defaultValues: consultationForm,
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    setConsultationForm(values);
     const params = new URLSearchParams();
     Object.entries(values).forEach(([key, value]) => {
       if (value) params.append(key, value);
@@ -350,5 +342,13 @@ export default function ConsultationPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function ConsultationPageWithProvider() {
+  return (
+    <FormProvider>
+      <InnerConsultationPage />
+    </FormProvider>
   );
 } 
