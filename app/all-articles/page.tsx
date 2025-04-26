@@ -12,16 +12,24 @@ import { cn } from '@/lib/utils';
 export default function AllArticlesPage() {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 9; // 3列 × 3段 = 9記事
+  const postsPerPage = 9;
 
   useEffect(() => {
     async function fetchPosts() {
       try {
+        setIsLoading(true);
+        setError(null);
         const data = await getPosts();
-        setPosts(data);
+        if (data && data.length > 0) {
+          setPosts(data);
+        } else {
+          setError('記事が見つかりませんでした。');
+        }
       } catch (error) {
         console.error('Error fetching posts:', error);
+        setError('記事の取得に失敗しました。');
       } finally {
         setIsLoading(false);
       }
@@ -52,6 +60,19 @@ export default function AllArticlesPage() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container mx-auto py-16">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-red-600 mb-4">{error}</h1>
+          <Link href="/" className="text-[#008B8B] hover:text-[#007070] transition-colors">
+            トップページに戻る
+          </Link>
         </div>
       </div>
     );
@@ -104,45 +125,47 @@ export default function AllArticlesPage() {
       </div>
 
       {/* ページネーション */}
-      <div className="flex justify-center items-center space-x-2">
-        <Button
-          variant="outline"
-          onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-          disabled={currentPage === 1}
-          className="flex items-center border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B]/5 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          <ChevronLeft className="h-4 w-4 mr-1" />
-          前へ
-        </Button>
-        
-        <div className="flex items-center space-x-1">
-          {[...Array(totalPages)].map((_, i) => (
-            <Button
-              key={i + 1}
-              variant={currentPage === i + 1 ? "default" : "outline"}
-              onClick={() => setCurrentPage(i + 1)}
-              className={cn(
-                "w-8 h-8 p-0",
-                currentPage === i + 1 
-                  ? "bg-[#008B8B] text-white hover:bg-[#40E0D0]"
-                  : "border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B]/5"
-              )}
-            >
-              {i + 1}
-            </Button>
-          ))}
-        </div>
+      {totalPages > 1 && (
+        <div className="flex justify-center items-center space-x-2">
+          <Button
+            variant="outline"
+            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className="flex items-center border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B]/5 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <ChevronLeft className="h-4 w-4 mr-1" />
+            前へ
+          </Button>
+          
+          <div className="flex items-center space-x-1">
+            {[...Array(totalPages)].map((_, i) => (
+              <Button
+                key={i + 1}
+                variant={currentPage === i + 1 ? "default" : "outline"}
+                onClick={() => setCurrentPage(i + 1)}
+                className={cn(
+                  "w-8 h-8 p-0",
+                  currentPage === i + 1 
+                    ? "bg-[#008B8B] text-white hover:bg-[#40E0D0]"
+                    : "border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B]/5"
+                )}
+              >
+                {i + 1}
+              </Button>
+            ))}
+          </div>
 
-        <Button
-          variant="outline"
-          onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-          disabled={currentPage === totalPages}
-          className="flex items-center border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B]/5 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          次へ
-          <ChevronRight className="h-4 w-4 ml-1" />
-        </Button>
-      </div>
+          <Button
+            variant="outline"
+            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className="flex items-center border-[#008B8B] text-[#008B8B] hover:bg-[#008B8B]/5 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            次へ
+            <ChevronRight className="h-4 w-4 ml-1" />
+          </Button>
+        </div>
+      )}
     </div>
   );
 } 

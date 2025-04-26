@@ -83,7 +83,7 @@ function WorksList() {
 
   useEffect(() => {
     async function fetchWorks() {
-      const data = await getWorksPosts();
+      const data = await getWorksPosts(6);
       setWorks(data);
     }
     fetchWorks();

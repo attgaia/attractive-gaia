@@ -83,9 +83,24 @@ type WorkDetailResponse = {
 };
 
 export const getPosts = async (): Promise<Post[]> => {
+  // まず制作実例のスラッグを取得
+  const worksQuery = gql`
+    query GetWorksSlugs {
+      posts(where: {categoryName: "works"}, first: 100) {
+        nodes {
+          slug
+        }
+      }
+    }
+  `;
+
+  const worksData = await graphQLClient.request(worksQuery);
+  const worksSlugs = worksData.posts.nodes.map(post => post.slug);
+
+  // 記事を取得（制作実例のスラッグを除外）
   const query = gql`
     query GetPosts {
-      posts {
+      posts(first: 100, where: {categoryNotIn: "works"}) {
         nodes {
           id
           title
@@ -103,6 +118,7 @@ export const getPosts = async (): Promise<Post[]> => {
           categories {
             nodes {
               name
+              slug
             }
           }
           featuredImage {
@@ -116,7 +132,9 @@ export const getPosts = async (): Promise<Post[]> => {
   `;
 
   const data: AllPostsResponse = await graphQLClient.request(query);
-  return data.posts.nodes;
+  // 制作実例のスラッグと一致する記事を除外
+  const filteredPosts = data.posts.nodes.filter(post => !worksSlugs.includes(post.slug));
+  return filteredPosts;
 };
 
 export const getPostBySlug = async (slug: string): Promise<PostDetail | null> => {
@@ -149,7 +167,7 @@ export const getPostBySlug = async (slug: string): Promise<PostDetail | null> =>
 export const getCategories = async (): Promise<Category[]> => {
   const query = gql`
     query GetCategories {
-      categories {
+      categories(first: 100) {
         nodes {
           id
           name
@@ -169,15 +187,22 @@ export const getCategories = async (): Promise<Category[]> => {
   }
 };
 
-export async function getWorksPosts() {
-  const query = `
-    query WorksPosts {
-      posts(where: {categoryName: "works"}, first: 6) {
+export async function getWorksPosts(limit?: number) {
+  const query = gql`
+    query WorksPosts($first: Int) {
+      posts(where: {categoryName: "works"}, first: $first) {
         nodes {
           id
           title
           excerpt
           slug
+          date
+          categories {
+            nodes {
+              name
+              slug
+            }
+          }
           featuredImage {
             node {
               sourceUrl
@@ -190,16 +215,12 @@ export async function getWorksPosts() {
   `;
 
   try {
-    const response = await fetch(process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://attgaia.com/graphql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ query }),
-    });
-
-    const { data } = await response.json();
-    return data.posts.nodes;
+    const data = await graphQLClient.request(query, { first: limit || 100 });
+    // 日付順（降順）でソート
+    const sortedPosts = data.posts.nodes.sort((a, b) => 
+      new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+    return sortedPosts;
   } catch (error) {
     console.error('Error fetching works posts:', error);
     return [];

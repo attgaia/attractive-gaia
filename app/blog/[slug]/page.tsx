@@ -18,14 +18,22 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPost({ params }: Props) {
-  const [post, categories] = await Promise.all([
+  const [post, categories, allPosts] = await Promise.all([
     getPostBySlug(params.slug),
-    getCategories()
+    getCategories(),
+    getPosts()
   ])
 
   if (!post) {
     notFound()
   }
+
+  // 記事が存在するカテゴリーのみをフィルタリング
+  const categoriesWithPosts = categories.filter(category => 
+    allPosts.some(post => 
+      post.categories.nodes.some(cat => cat.slug === category.slug)
+    )
+  )
 
   return (
     <div className="container max-w-7xl mx-auto py-12 px-4">
@@ -61,10 +69,10 @@ export default async function BlogPost({ params }: Props) {
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-xl font-bold mb-4">カテゴリー</h2>
             <ul className="space-y-2">
-              {categories.map((category) => (
+              {categoriesWithPosts.map((category) => (
                 <li key={category.id}>
                   <Link
-                    href={`/blog/category/${category.slug}`}
+                    href={`/category/${category.slug}`}
                     className="flex items-center justify-between text-gray-700 hover:text-primary"
                   >
                     <span>{category.name}</span>
