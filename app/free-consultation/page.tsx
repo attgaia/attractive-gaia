@@ -24,7 +24,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { FormProvider, useFormContext } from '@/components/context/FormContext';
+import { useFormContext } from '@/components/context/FormContext';
 
 const formSchema = z.object({
   companyName: z.string().min(1, { message: '法人名・屋号名・団体名を入力してください' }),
@@ -345,10 +345,4 @@ function InnerConsultationPage() {
   );
 }
 
-export default function ConsultationPageWithProvider() {
-  return (
-    <FormProvider>
-      <InnerConsultationPage />
-    </FormProvider>
-  );
-} 
+export default InnerConsultationPage; 

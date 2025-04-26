@@ -25,6 +25,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { useFormContext } from '@/components/context/FormContext';
 
 // バリデーションスキーマの定義
 const formSchema = z.object({
@@ -43,27 +44,18 @@ const formSchema = z.object({
   path: ["emailConfirm"],
 });
 
-export default function ContactPage() {
+function ContactPage() {
   const router = useRouter();
+  const { contactForm, setContactForm } = useFormContext();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      companyName: '',
-      name: '',
-      department: '',
-      position: '',
-      email: '',
-      emailConfirm: '',
-      phone: '',
-      address: '',
-      inquiryType: '',
-      message: '',
-    },
+    defaultValues: contactForm,
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setContactForm(values);
     setIsSubmitting(true);
     try {
       // 確認画面へ遷移
@@ -306,4 +298,6 @@ export default function ContactPage() {
       </div>
     </div>
   );
-} 
+}
+
+export default ContactPage; 

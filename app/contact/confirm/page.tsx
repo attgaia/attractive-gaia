@@ -1,28 +1,18 @@
 'use client';
 
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { useFormContext } from '@/components/context/FormContext';
 
 export default function ConfirmPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const { contactForm } = useFormContext();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // すべての入力項目を取得
-  const formData = {
-    companyName: searchParams.get('companyName') || '',
-    name: searchParams.get('name') || '',
-    department: searchParams.get('department') || '',
-    position: searchParams.get('position') || '',
-    email: searchParams.get('email') || '',
-    emailConfirm: searchParams.get('emailConfirm') || '',
-    phone: searchParams.get('phone') || '',
-    address: searchParams.get('address') || '',
-    inquiryType: searchParams.get('inquiryType') || '',
-    message: searchParams.get('message') || '',
-  };
+  const formData = contactForm;
 
   const handleBack = () => {
     router.back();
@@ -30,7 +20,6 @@ export default function ConfirmPage() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    
     try {
       const params = new URLSearchParams();
       Object.entries(formData).forEach(([key, value]) => {
@@ -94,25 +83,23 @@ export default function ConfirmPage() {
         <h1 className="text-4xl font-bold text-center mb-8">入力内容の確認</h1>
 
         <div className="bg-white p-8 rounded-lg shadow-lg">
-          <ConfirmField label="法人名・屋号名・団体名" value={formData.companyName} required />
-          <ConfirmField label="お名前" value={formData.name} required />
-          <ConfirmField label="部署名" value={formData.department} />
-          <ConfirmField label="役職名" value={formData.position} />
-          <ConfirmField label="メールアドレス" value={formData.email} required />
-          <ConfirmField label="電話番号" value={formData.phone} />
-          <ConfirmField label="所在地" value={formData.address} required />
-          <ConfirmField label="お問い合わせの種類" value={formData.inquiryType} required />
-          
+          <ConfirmField label="法人名・屋号名・団体名" value={formData.companyName || ''} required />
+          <ConfirmField label="お名前" value={formData.name || ''} required />
+          <ConfirmField label="部署名" value={formData.department || ''} />
+          <ConfirmField label="役職名" value={formData.position || ''} />
+          <ConfirmField label="メールアドレス" value={formData.email || ''} required />
+          <ConfirmField label="電話番号" value={formData.phone || ''} />
+          <ConfirmField label="所在地" value={formData.address || ''} required />
+          <ConfirmField label="お問い合わせの種類" value={formData.inquiryType || ''} required />
           <div className="mb-6">
             <div className="flex items-center gap-2 mb-1">
               <label className="text-gray-700">お問い合わせ内容</label>
               <span className="px-2 py-0.5 text-xs font-bold text-white bg-[#FF3B30] rounded">必須</span>
             </div>
             <div className="border p-2 rounded bg-gray-50 whitespace-pre-wrap min-h-[100px]">
-              {formData.message}
+              {formData.message || ''}
             </div>
           </div>
-
           <div className="flex justify-center gap-4">
             <button
               onClick={handleBack}

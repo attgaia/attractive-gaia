@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { useState } from 'react';
-import { FormProvider, useFormContext } from '@/components/context/FormContext';
+import { useFormContext } from '@/components/context/FormContext';
 
 type ConfirmFieldProps = {
   label: string;
@@ -102,10 +102,4 @@ function InnerConsultationConfirmPage() {
   );
 }
 
-export default function ConsultationConfirmPageWithProvider() {
-  return (
-    <FormProvider>
-      <InnerConsultationConfirmPage />
-    </FormProvider>
-  );
-} 
+export default InnerConsultationConfirmPage; 
