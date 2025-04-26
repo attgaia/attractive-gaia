@@ -1,8 +1,84 @@
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { MessageCircle, Sparkles, CheckCircle, Clock, Users } from 'lucide-react'
+'use client';
 
-const FreeConsultationPage = () => {
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { MessageCircle, Sparkles, CheckCircle, Clock, Users } from 'lucide-react';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+
+const formSchema = z.object({
+  companyName: z.string().min(1, { message: '法人名・屋号名・団体名を入力してください' }),
+  name: z.string().min(1, { message: 'お名前を入力してください' }),
+  department: z.string().optional(),
+  position: z.string().optional(),
+  email: z.string().email({ message: '有効なメールアドレスを入力してください' }),
+  emailConfirm: z.string().email({ message: '有効なメールアドレスを入力してください' }),
+  phone: z.string().optional(),
+  address: z.string().min(1, { message: '所在地を入力してください' }),
+  consultationType: z.string().min(1, { message: '無料相談の種類を選択してください' }),
+  message: z.string().min(1, { message: '無料相談内容を入力してください' }),
+}).refine((data) => data.email === data.emailConfirm, {
+  message: 'メールアドレスが一致しません',
+  path: ['emailConfirm'],
+});
+
+const RequiredBadge = () => (
+  <span className="ml-2 inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+    必須
+  </span>
+);
+
+const OptionalBadge = () => (
+  <span className="ml-2 inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+    任意
+  </span>
+);
+
+export default function ConsultationPage() {
+  const router = useRouter();
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      companyName: '',
+      name: '',
+      department: '',
+      position: '',
+      email: '',
+      emailConfirm: '',
+      phone: '',
+      address: '',
+      consultationType: '',
+      message: '',
+    },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    const params = new URLSearchParams();
+    Object.entries(values).forEach(([key, value]) => {
+      if (value) params.append(key, value);
+    });
+    router.push(`/free-consultation/confirm?${params.toString()}`);
+  }
+
   return (
     <div className="container mx-auto py-12 md:py-20">
       {/* ヒーローセクション */}
@@ -85,78 +161,194 @@ const FreeConsultationPage = () => {
           <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">
             無料相談お申し込みフォーム
           </h2>
-          <form className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                お名前 <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="name"
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <FormField
+                control={form.control}
+                name="companyName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      法人名・屋号名・団体名
+                      <RequiredBadge />
+                    </FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
                 name="name"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      お名前
+                      <RequiredBadge />
+                    </FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-            <div>
-              <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-                会社名
-              </label>
-              <input
-                type="text"
-                id="company"
-                name="company"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500"
+
+              <FormField
+                control={form.control}
+                name="department"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      部署名
+                      <OptionalBadge />
+                    </FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                メールアドレス <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                id="email"
+
+              <FormField
+                control={form.control}
+                name="position"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      役職名
+                      <OptionalBadge />
+                    </FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
                 name="email"
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      メールアドレス
+                      <RequiredBadge />
+                    </FormLabel>
+                    <FormControl>
+                      <Input type="email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                電話番号
-              </label>
-              <input
-                type="tel"
-                id="phone"
+
+              <FormField
+                control={form.control}
+                name="emailConfirm"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      メールアドレス確認
+                      <RequiredBadge />
+                    </FormLabel>
+                    <FormControl>
+                      <Input type="email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
                 name="phone"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      電話番号
+                      <OptionalBadge />
+                    </FormLabel>
+                    <FormControl>
+                      <Input type="tel" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-            <div>
-              <label htmlFor="consultation" className="block text-sm font-medium text-gray-700 mb-1">
-                ご相談内容 <span className="text-red-500">*</span>
-              </label>
-              <textarea
-                id="consultation"
-                name="consultation"
-                rows={4}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-emerald-500 focus:border-emerald-500"
+
+              <FormField
+                control={form.control}
+                name="address"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      所在地
+                      <RequiredBadge />
+                    </FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </div>
-            <div className="text-center">
-              <Button
-                type="submit"
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-md shadow-lg"
-              >
-                送信する
-              </Button>
-            </div>
-          </form>
+
+              <FormField
+                control={form.control}
+                name="consultationType"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      無料相談の種類
+                      <RequiredBadge />
+                    </FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="選択してください" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="business">事業相談</SelectItem>
+                        <SelectItem value="technical">技術相談</SelectItem>
+                        <SelectItem value="other">その他</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="flex items-center">
+                      無料相談内容
+                      <RequiredBadge />
+                    </FormLabel>
+                    <FormControl>
+                      <Textarea rows={5} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <div className="flex justify-center">
+                <Button type="submit" className="px-8">確認画面へ</Button>
+              </div>
+            </form>
+          </Form>
         </div>
       </section>
     </div>
-  )
-}
-
-export default FreeConsultationPage 
+  );
+} 
