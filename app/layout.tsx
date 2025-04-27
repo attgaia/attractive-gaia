@@ -8,11 +8,6 @@ import { FormProvider } from '@/components/context/FormContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: 'ATT GAIA',
-  description: '地球環境に優しく銀河系を代表する会社を創る',
-}
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">

@@ -1,93 +1,24 @@
-'use client';
-
 import Link from "next/link"
 import Image from "next/image"
-import { useRouter } from 'next/navigation'
-import { ArrowRight, ArrowDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import ServiceCard from "@/components/service-card"
 import AiSupportCard from "@/components/ai-support-card"
 import NewsCard from "@/components/news-card"
 import TestimonialSlider from "@/components/testimonial-slider"
-import HeroAnimation from "@/components/hero-animation"
-import React, { useEffect, useState } from 'react'
-import { motion } from "framer-motion"
-import { getPosts, getWorksPosts } from '@/lib/graphql'
+import HeroSection from "@/components/hero-section"
+import ArticleList from "@/components/article-list"
+import { getWorksPosts } from '@/lib/graphql'
+import { ArrowRight } from "lucide-react"
 
-function ArticleList() {
-  const [posts, setPosts] = useState([]);
+export const metadata = {
+  title: "AI技術で企業の未来を創造する | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAは、AI技術を活用した企業支援サービスを提供しています。業務効率化、社内教育、商品開発まで、すべてを支えるデジタル右腕として、あなたのビジネスを次のステージへ導きます。",
+  keywords: "AI支援, 業務効率化, 企業支援, 群馬, デジタル化, ATTRACTIVEGAIA"
+};
 
-  useEffect(() => {
-    async function fetchPosts() {
-      const data = await getPosts();
-      setPosts(data);
-    }
-    fetchPosts();
-  }, []);
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-      {posts.slice(0, 6).map((post) => (
-        <Link
-          key={post.id}
-          href={`/blog/${post.slug}`}
-          className="group block space-y-4 shadow-lg hover:shadow-xl transition-shadow duration-300"
-        >
-          {post.featuredImage?.node?.sourceUrl && (
-            <div className="relative aspect-video overflow-hidden rounded-lg">
-              <Image
-                src={post.featuredImage.node.sourceUrl}
-                alt={post.title}
-                fill
-                className="object-cover transition-transform group-hover:scale-105"
-              />
-            </div>
-          )}
-          <div className="space-y-2 p-4">
-            <div className="text-xs text-white bg-[#008B8B] rounded-full px-2 py-1 inline-block">
-              {post.categories.nodes.map(cat => cat.name).join(', ')}
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 group-hover:text-primary">
-              {post.title}
-            </h3>
-            <p className="text-sm text-gray-700 line-clamp-2">
-              {post.excerpt?.replace(/<[^>]+>/g, '')}
-            </p>
-            <div className="flex items-center text-xs text-gray-500">
-              {post.author?.node?.avatar?.url && (
-                <img 
-                  src={post.author.node.avatar.url} 
-                  alt={post.author.node.name} 
-                  className="w-6 h-6 rounded-full mr-2 object-cover" 
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-              )}
-              <span>著者: {post.author?.node?.name}</span>
-            </div>
-          </div>
-        </Link>
-      ))}
-      <div className="col-span-full flex justify-center mt-8">
-        <Link href="/all-articles" className="inline-block bg-[#008B8B] text-white py-2 px-4 rounded hover:bg-[#008B8B]/90 transition text-center">記事一覧はこちら</Link>
-      </div>
-    </div>
-  );
-}
-
-function WorksList() {
-  const [works, setWorks] = useState([]);
-
-  useEffect(() => {
-    async function fetchWorks() {
-      const data = await getWorksPosts(6);
-      setWorks(data);
-    }
-    fetchWorks();
-  }, []);
+async function WorksList() {
+  const works = await getWorksPosts(6);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -124,70 +55,11 @@ function WorksList() {
   );
 }
 
-export default function Home() {
-  const router = useRouter();
-
+export default async function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <main className="flex-1">
-        {/* 新しいヒーローセクション */}
-        <section className="relative h-screen overflow-hidden bg-gradient-to-br from-[#008B8B] via-[#008B8B]/80 to-[#40E0D0] text-white">
-          {/* アニメーション背景 */}
-          <div className="absolute inset-0 opacity-70">
-            <HeroAnimation />
-          </div>
-
-          {/* オーバーレイグラデーション */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#008B8B]/80"></div>
-
-          <div className="container relative z-10 h-full flex flex-col justify-center items-center text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <Badge className="mb-6 bg-[#008B8B]/20 text-white hover:bg-[#008B8B]/30 border-[#008B8B]/30 backdrop-blur-sm">
-                AI技術で企業の未来を創造する
-              </Badge>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-4xl md:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight"
-            >
-              AIで<span className="text-[#40E0D0]">ビジネスの可能性</span>を<br className="hidden md:block" />
-              無限に広げる
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg md:text-xl text-emerald-100 mb-16 max-w-2xl"
-            >
-              業務効率化、社内教育、商品開発まで、<br className="hidden md:block" />
-              すべてを支える"デジタル右腕"として<br className="hidden md:block" />
-              あなたのビジネスを次のステージへ
-            </motion.p>
-
-            <div className="relative z-10 flex justify-center w-full mb-16 pointer-events-auto">
-              <a
-                href="/services/ai-consulting"
-                className="inline-block bg-[#FFA500] hover:bg-[#FF8C00] text-white font-bold text-lg px-8 py-4 rounded-md transition-colors duration-200"
-              >
-                AI支援サービスを見る <ArrowRight className="inline-block align-middle ml-2 h-5 w-5" />
-              </a>
-            </div>
-
-            <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
-              <a href="#services" className="text-emerald-300 hover:text-emerald-100 transition-colors">
-                <ArrowDown className="h-8 w-8" />
-              </a>
-            </div>
-          </div>
-        </section>
+        <HeroSection />
 
         {/* サービス紹介セクション */}
         <section id="services" className="py-16 md:py-24 bg-white">
@@ -391,5 +263,5 @@ export default function Home() {
         </section>
       </main>
     </div>
-  )
+  );
 }

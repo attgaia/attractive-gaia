@@ -1,11 +1,14 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Video, Film, Users, Mic, Store, Sparkles, Camera, Edit3, Bot, Target, Clock, PlayCircle, MessageCircle, CheckCircle, Check, Edit, Music, ArrowLeft } from 'lucide-react';
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "動画制作サービス | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAの動画制作サービスは、プロモーション動画、採用動画、ブランディング動画など多様な映像コンテンツを制作し、視覚的な訴求力を高めます。",
+};
 
 const VideoProductionPage = () => {
   return (

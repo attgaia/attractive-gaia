@@ -3,10 +3,67 @@ import { getPosts, getPostBySlug, getCategories } from '@/lib/graphql'
 import Image from 'next/image'
 import { formatDate } from '@/lib/utils'
 import Link from 'next/link'
+import { Metadata } from 'next'
 
 type Props = {
   params: {
     slug: string
+  }
+}
+
+// キーワードを生成する関数
+function generateKeywords(title: string, categories: { name: string }[]): string[] {
+  const keywords = new Set<string>()
+  
+  // タイトルからキーワードを抽出
+  const titleWords = title.split(/\s+/).filter(word => word.length > 1)
+  titleWords.forEach(word => keywords.add(word))
+  
+  // カテゴリー名をキーワードとして追加
+  categories.forEach(category => keywords.add(category.name))
+  
+  // キーワードを3-5個に制限
+  return Array.from(keywords).slice(0, 5)
+}
+
+// 説明文を生成する関数
+function generateDescription(content: string, excerpt: string | null): string {
+  if (excerpt) {
+    return excerpt.replace(/<[^>]*>/g, '').slice(0, 100)
+  }
+  
+  // HTMLタグを除去して本文から説明文を生成
+  const plainContent = content.replace(/<[^>]*>/g, '')
+  return plainContent.slice(0, 100) + '...'
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  try {
+    const post = await getPostBySlug(params.slug)
+    
+    if (!post) {
+      return {
+        title: '記事が見つかりません | ATTRACTIVEGAIA',
+        description: 'お探しの記事は見つかりませんでした。',
+        keywords: 'ブログ, 記事, 404'
+      }
+    }
+
+    const keywords = generateKeywords(post.title, post.categories.nodes)
+    const description = generateDescription(post.content, post.excerpt)
+
+    return {
+      title: post.title,
+      description,
+      keywords: keywords.join(', ')
+    }
+  } catch (error) {
+    console.error('Metadata generation error:', error)
+    return {
+      title: 'ブログ記事 | ATTRACTIVEGAIA',
+      description: 'ATTRACTIVEGAIAのブログ記事です。',
+      keywords: 'ブログ, 記事, ATTRACTIVEGAIA'
+    }
   }
 }
 

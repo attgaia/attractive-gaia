@@ -1,5 +1,11 @@
 import React from 'react';
 
+export const metadata = {
+  title: "利用規約 | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAの利用規約をご案内します。当社のサービスをご利用いただく際の基本的なルールと注意事項をご確認ください。",
+  keywords: "利用規約, サービス利用条件, 契約条件, 群馬, ATTRACTIVEGAIA"
+};
+
 const TermsOfServicePage = () => {
   return (
     <div className="container mx-auto py-12 md:py-20 px-4">

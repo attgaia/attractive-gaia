@@ -1,11 +1,14 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Map, Users, Store, Lightbulb, MessageCircle, ArrowLeft } from 'lucide-react';
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "地域活性化プロジェクト | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAの地域活性化プロジェクトは、地域資源を活かしたビジネス支援と、地方創生のための取り組みを推進しています。",
+};
 
 const RegionalRevitalizationPage = () => {
   return (

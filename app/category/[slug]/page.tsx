@@ -13,6 +13,33 @@ type Props = {
   };
 };
 
+export async function generateMetadata({ params }: Props) {
+  const [categories, posts] = await Promise.all([
+    getCategories(),
+    getPosts()
+  ]);
+
+  const category = categories.find(cat => cat.slug === params.slug);
+  
+  if (!category) {
+    return {
+      title: 'ページが見つかりません | ATTRACTIVEGAIA（アトラクティブガイア）',
+      description: 'お探しのページが見つかりませんでした。',
+      keywords: 'ATTRACTIVEGAIA, 404, ページが見つかりません'
+    };
+  }
+
+  const categoryPosts = posts.filter(post => 
+    post.categories.nodes.some(cat => cat.slug === params.slug)
+  );
+
+  return {
+    title: `${category.name}の記事一覧 | ATTRACTIVEGAIA（アトラクティブガイア）`,
+    description: `${category.name}に関する記事一覧です。ATTRACTIVEGAIAが提供する${category.name}に関する最新情報や技術情報をご覧ください。`,
+    keywords: `${category.name}, 記事一覧, ブログ, 群馬, ATTRACTIVEGAIA`
+  };
+}
+
 export default async function CategoryPage({ params }: Props) {
   const [allPosts, categories] = await Promise.all([
     getPosts(),

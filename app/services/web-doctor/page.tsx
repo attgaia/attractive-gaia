@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
@@ -10,6 +8,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+
+export const metadata: Metadata = {
+  title: "Webドクターサービス | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAのWebドクターサービスは、既存サイトの課題を診断・改善。SEO対策や表示速度向上など、Webサイトの健康状態を最適化します。",
+};
 
 const WebDoctorPage = () => {
   return (

@@ -42,6 +42,13 @@ type PostDetail = {
   slug: string;
   date: string;
   content: string;
+  excerpt: string | null;
+  categories: {
+    nodes: {
+      name: string;
+      slug: string;
+    }[];
+  };
   featuredImage: {
     node: {
       sourceUrl: string;
@@ -146,6 +153,13 @@ export const getPostBySlug = async (slug: string): Promise<PostDetail | null> =>
         slug
         date
         content
+        excerpt
+        categories {
+          nodes {
+            name
+            slug
+          }
+        }
         featuredImage {
           node {
             sourceUrl

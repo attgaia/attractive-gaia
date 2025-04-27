@@ -4,6 +4,11 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { CheckCircle, Globe, Palette, Code, Server, TrendingUp } from 'lucide-react';
 
+export const metadata: Metadata = {
+  title: "Web制作パッケージ | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAが提供するWeb制作パッケージは、デザインから開発、運用までを一貫してサポート。ビジネスの成長に繋がるサイト構築を実現します。",
+};
+
 const WebProductionPackagePage = () => {
   return (
     <div className="container mx-auto py-12 md:py-20">

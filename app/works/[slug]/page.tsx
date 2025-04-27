@@ -10,6 +10,24 @@ type Props = {
   };
 };
 
+export async function generateMetadata({ params }: Props) {
+  const work = await getWorkBySlug(params.slug);
+  
+  if (!work) {
+    return {
+      title: 'ページが見つかりません | ATTRACTIVEGAIA（アトラクティブガイア）',
+      description: 'お探しのページが見つかりませんでした。',
+      keywords: 'ATTRACTIVEGAIA, 404, ページが見つかりません'
+    };
+  }
+
+  return {
+    title: `${work.title} | 制作実例 | ATTRACTIVEGAIA（アトラクティブガイア）`,
+    description: `${work.title}の制作実例をご紹介します。ATTRACTIVEGAIAが提供する高品質なソリューションの詳細をご覧ください。`,
+    keywords: `${work.title}, 制作実例, ポートフォリオ, 群馬, ATTRACTIVEGAIA`
+  };
+}
+
 export default async function WorkDetail({ params }: Props) {
   const [work, categories, allPosts] = await Promise.all([
     getWorkBySlug(params.slug),

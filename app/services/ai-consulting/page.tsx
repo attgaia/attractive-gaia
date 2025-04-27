@@ -5,6 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { CheckCircle, BrainCircuit, Globe, Users, Palette } from 'lucide-react';
 import Link from 'next/link';
 
+export const metadata = {
+  title: "AI業務支援サービス | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAのAI業務支援サービスでは、企業の業務効率化と生産性向上を目的に、AI技術を活用した最適なソリューションをご提供します。",
+  keywords: "AI業務支援, 業務効率化, AI導入, DX, ATTRACTIVEGAIA"
+};
+
 const AiConsultingPage = () => {
   return (
     <div className="container mx-auto py-12 md:py-20">

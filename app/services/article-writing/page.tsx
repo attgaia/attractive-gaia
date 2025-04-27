@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
@@ -10,6 +8,11 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+
+export const metadata: Metadata = {
+  title: "記事作成代行サービス | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAでは、SEOを意識した記事作成代行サービスを提供。高品質なコンテンツで集客・ブランディングをサポートします。",
+};
 
 const ArticleWritingPage = () => {
   return (

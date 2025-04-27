@@ -1,11 +1,14 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ShoppingCart, Target, BarChart, Users, Settings, MessageCircle, ArrowLeft } from 'lucide-react';
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "ECコンサルティングサービス | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAのECコンサルティングサービスは、ネットショップの売上向上とブランド強化を支援します。ShopifyやWooCommerce対応。",
+};
 
 const EcConsultingPage = () => {
   return (

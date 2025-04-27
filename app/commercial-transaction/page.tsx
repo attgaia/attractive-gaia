@@ -1,5 +1,12 @@
 import React from 'react';
 
+export const metadata = {
+  title: "特定商取引法に基づく表記 | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAの特定商取引法に基づく表記ページです。販売事業者情報、連絡先、返品・交換・キャンセルなどに関する重要事項をご案内します。",
+  keywords: "特定商取引法, 通信販売, 返品対応, 事業者情報, ATTRACTIVEGAIA"
+};
+
+
 const CommercialTransactionPage = () => {
   return (
     <div className="container mx-auto py-12 md:py-20 px-4">

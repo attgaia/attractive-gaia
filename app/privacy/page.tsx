@@ -1,5 +1,11 @@
 import React from 'react';
 
+export const metadata = {
+  title: "プライバシーポリシー | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAのプライバシーポリシーをご案内します。お客様の個人情報の取り扱いについて、当社の考え方と具体的な運用方法をご説明いたします。",
+  keywords: "プライバシーポリシー, 個人情報保護, セキュリティ, 群馬, ATTRACTIVEGAIA"
+};
+
 const PrivacyPolicyPage = () => {
   return (
     <div className="container mx-auto py-12 md:py-20 px-4">

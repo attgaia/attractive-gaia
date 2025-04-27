@@ -1,10 +1,15 @@
-'use client';
 
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import ServiceCard from "@/components/service-card"
 import AiSupportCard from "@/components/ai-support-card"
+
+export const metadata = {
+  title: "サービス紹介 | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAが提供する各種サービスをご紹介します。AI支援、業務効率化、社内教育、商品開発支援を通じて、貴社の成長を力強くサポートします。",
+  keywords: "サービス紹介, AI支援, 業務効率化, 社内教育, 商品開発, ATTRACTIVEGAIA"
+};
 
 export default function ServicesPage() {
   return (

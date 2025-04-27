@@ -1,5 +1,11 @@
 import React from 'react';
 
+export const metadata = {
+  title: "サービス詳細 | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAが提供する各種サービスの詳細をご紹介します。AI支援、Web制作、ブランディングなど、お客様のビジネスに最適なソリューションをご提案いたします。",
+  keywords: "サービス詳細, AI支援, Web制作, ブランディング, 群馬, ATTRACTIVEGAIA"
+};
+
 export default function ServiceDetail({ params }) {
   const { slug } = params;
 

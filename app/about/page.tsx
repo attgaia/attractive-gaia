@@ -1,8 +1,13 @@
-'use client';
 
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+export const metadata = {
+  title: "会社概要 | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAの会社概要をご紹介します。AI技術を活用した企業支援サービスを提供し、お客様のビジネスの成長をサポートします。",
+  keywords: "会社概要, 企業理念, 経営方針, 群馬, ATTRACTIVEGAIA"
+};
 
 export default function AboutPage() {
   return (

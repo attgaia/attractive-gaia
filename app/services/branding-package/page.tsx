@@ -5,6 +5,11 @@ import { Card } from "@/components/ui/card"
 import { CheckCircle, Palette, Sparkles, Layers, MessageCircle, FileText, Video, Globe } from 'lucide-react';
 import { ContactForm } from "@/components/contact-form"
 
+export const metadata: Metadata = {
+  title: "ブランディングパッケージ | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAが提供するブランディングパッケージでは、企業や商品のブランド力を高め、独自の世界観を作り上げるための戦略設計とデザインを支援します。",
+};
+
 const BrandingPackagePage = () => {
   return (
     <div className="container mx-auto py-12 md:py-20">
