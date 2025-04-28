@@ -175,65 +175,14 @@ export default function WebProductionLiteClient() {
               </div>
             </div>
 
-            {/* お申し込みフォーム */}
+            {/* 無料相談セクション */}
             <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-center mb-8">お申し込みフォーム</h2>
-              <form className="space-y-6">
-                <div className="space-y-4">
-                  <div>
-                    <Label htmlFor="plan">ご希望のプラン</Label>
-                    <RadioGroup defaultValue="light" className="mt-2">
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="light" id="light" />
-                        <Label htmlFor="light">ライトプラン（¥9,800/月）</Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="standard" id="standard" />
-                        <Label htmlFor="standard">スタンダードプラン（¥19,800/月）</Label>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <RadioGroupItem value="premium" id="premium" />
-                        <Label htmlFor="premium">プレミアムプラン（¥29,800〜/月）</Label>
-                      </div>
-                    </RadioGroup>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="company">会社名</Label>
-                    <Input id="company" placeholder="株式会社〇〇" />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="name">お名前</Label>
-                    <Input id="name" placeholder="山田 太郎" />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email">メールアドレス</Label>
-                    <Input id="email" type="email" placeholder="example@example.com" />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="phone">電話番号</Label>
-                    <Input id="phone" type="tel" placeholder="090-0000-0000" />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="message">ご要望・ご質問</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="サイトの目的やご要望をお聞かせください。"
-                      className="min-h-[120px]"
-                    />
-                  </div>
-                </div>
-
-                <div className="text-center">
-                  <Button type="submit" className="bg-emerald-600 text-white hover:bg-emerald-700 px-8 py-4 text-lg">
-                    お申し込み内容を確認する
-                  </Button>
-                </div>
-              </form>
+              <h2 className="text-2xl font-bold text-center mb-8">無料相談を承ります</h2>
+              <div className="text-center">
+                <a href="/free-consultation" className="inline-block bg-emerald-600 text-white py-4 px-8 rounded-md hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-colors text-lg font-semibold">
+                  無料相談する
+                </a>
+              </div>
             </div>
           </div>
         </div>

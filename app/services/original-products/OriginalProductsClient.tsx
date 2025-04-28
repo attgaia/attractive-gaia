@@ -47,10 +47,10 @@ export default function OriginalProductsClient() {
                 >
                   <div className="flex items-center mb-4">
                     <Package className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">食品・飲料</h3>
+                    <h3 className="text-xl font-semibold">自然素材製品</h3>
                   </div>
                   <p className="text-gray-600">
-                    厳選された原料を使用した、安全で美味しい食品・飲料を提供しています。
+                    厳選された自然素材を使用した製品を提供しています。
                   </p>
                 </motion.div>
 
@@ -145,9 +145,9 @@ export default function OriginalProductsClient() {
                     className="bg-gray-50 p-6 rounded-lg"
                   >
                     <TrendingUp className="w-8 h-8 text-emerald-600 mb-4" />
-                    <h4 className="font-semibold mb-2">有機栽培食品シリーズ</h4>
+                    <h4 className="font-semibold mb-2">自然素材シリーズ</h4>
                     <p className="text-gray-600">
-                      年間10,000個以上の販売実績を誇る、人気の有機栽培食品シリーズです。
+                      年間1,000個以上の販売実績を誇る、人気の自然素材シリーズです。
                     </p>
                   </motion.div>
                   <motion.div

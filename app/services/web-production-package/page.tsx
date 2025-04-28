@@ -122,96 +122,11 @@ const WebProductionPackagePage = () => {
 
       {/* CTAセクション */}
       <section className="text-center bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-10 md:p-16">
-        <h2 className="text-3xl font-bold text-white mb-6">Webサイト制作に関するご相談はこちら</h2>
-        <div className="max-w-2xl mx-auto bg-white rounded-lg p-8 shadow-lg">
-          <form className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">お名前</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">会社名</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">メールアドレス</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">電話番号</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-1">ご予算</label>
-              <select
-                id="budget"
-                name="budget"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-              >
-                <option value="">選択してください</option>
-                <option value="under-500k">50万円未満</option>
-                <option value="500k-1m">50万円〜100万円</option>
-                <option value="1m-2m">100万円〜200万円</option>
-                <option value="over-2m">200万円以上</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">ご要望・お問い合わせ内容</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                required
-              ></textarea>
-            </div>
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="privacy"
-                name="privacy"
-                className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
-                required
-              />
-              <label htmlFor="privacy" className="ml-2 block text-sm text-gray-700">
-                <a href="/privacy" className="text-emerald-600 hover:text-emerald-500">プライバシーポリシー</a>に同意する
-              </label>
-            </div>
-            <div>
-              <button
-                type="submit"
-                className="w-full bg-emerald-600 text-white py-3 px-6 rounded-md hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-colors"
-              >
-                送信する
-              </button>
-            </div>
-          </form>
+        <h2 className="text-3xl font-bold text-white mb-6">無料相談を承ります</h2>
+        <div className="max-w-2xl mx-auto">
+          <a href="/free-consultation" className="inline-block bg-white text-emerald-600 py-4 px-8 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-colors text-lg font-semibold">
+            無料相談する
+          </a>
         </div>
       </section>
     </div>

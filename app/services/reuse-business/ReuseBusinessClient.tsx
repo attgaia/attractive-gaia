@@ -47,7 +47,7 @@ export default function ReuseBusinessClient() {
                 >
                   <div className="flex items-center mb-4">
                     <Recycle className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">アパレルリユース</h3>
+                    <h3 className="text-xl font-semibold">家電リユース</h3>
                   </div>
                   <p className="text-gray-600">
                     ファッション業界の環境負荷低減のため、高品質な中古衣類の回収・販売を行っています。
@@ -77,10 +77,10 @@ export default function ReuseBusinessClient() {
                 >
                   <div className="flex items-center mb-4">
                     <TrendingUp className="w-6 h-6 text-emerald-600 mr-2" />
-                    <h3 className="text-xl font-semibold">環境認証取得</h3>
+                    <h3 className="text-xl font-semibold">アパレルリユース事業</h3>
                   </div>
                   <p className="text-gray-600">
-                    環境配慮型ビジネスとして、各種環境認証を取得し、持続可能な取り組みを推進しています。
+                    中古衣類をリユース販売しております。
                   </p>
                 </motion.div>
 
@@ -147,7 +147,7 @@ export default function ReuseBusinessClient() {
                     <TrendingUp className="w-8 h-8 text-emerald-600 mb-4" />
                     <h4 className="font-semibold mb-2">アパレルリユース事業</h4>
                     <p className="text-gray-600">
-                      年間10,000着以上の衣類をリユースし、CO2排出量の削減に貢献しています。
+                      衣類をリユース販売し、CO2排出量の削減に貢献しています。
                     </p>
                   </motion.div>
                   <motion.div
@@ -157,9 +157,9 @@ export default function ReuseBusinessClient() {
                     className="bg-gray-50 p-6 rounded-lg"
                   >
                     <TrendingUp className="w-8 h-8 text-emerald-600 mb-4" />
-                    <h4 className="font-semibold mb-2">家具リユース事業</h4>
+                    <h4 className="font-semibold mb-2">家電リユース事業</h4>
                     <p className="text-gray-600">
-                      年間500点以上の家具を再利用し、森林資源の保護に貢献しています。
+                      年間500点以上の家電を再利用し、販売しています。
                     </p>
                   </motion.div>
                 </div>

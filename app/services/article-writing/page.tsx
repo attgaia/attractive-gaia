@@ -81,72 +81,11 @@ const ArticleWritingPage = () => {
 
         {/* 3. お問い合わせフォーム */}
         <section id="form" className="mb-16 md:mb-24">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">📝 お問い合わせフォーム</h2>
-          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
-            <form className="space-y-6">
-              <div className="space-y-4">
-                <div>
-                  <Label htmlFor="service">ご希望のサービス</Label>
-                  <RadioGroup defaultValue="blog" className="mt-2">
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="blog" id="blog" />
-                      <Label htmlFor="blog">企業ブログ</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="product" id="product" />
-                      <Label htmlFor="product">商品紹介</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="seo" id="seo" />
-                      <Label htmlFor="seo">SEO対策</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="column" id="column" />
-                      <Label htmlFor="column">コラム執筆</Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="interview" id="interview" />
-                      <Label htmlFor="interview">インタビュー記事</Label>
-                    </div>
-                  </RadioGroup>
-                </div>
-
-                <div>
-                  <Label htmlFor="company">会社名</Label>
-                  <Input id="company" placeholder="株式会社〇〇" />
-                </div>
-
-                <div>
-                  <Label htmlFor="name">お名前</Label>
-                  <Input id="name" placeholder="山田 太郎" />
-                </div>
-
-                <div>
-                  <Label htmlFor="email">メールアドレス</Label>
-                  <Input id="email" type="email" placeholder="example@example.com" />
-                </div>
-
-                <div>
-                  <Label htmlFor="phone">電話番号</Label>
-                  <Input id="phone" type="tel" placeholder="090-0000-0000" />
-                </div>
-
-                <div>
-                  <Label htmlFor="message">ご要望・ご質問</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="記事の目的やご要望をお聞かせください。"
-                    className="min-h-[120px]"
-                  />
-                </div>
-              </div>
-
-              <div className="text-center">
-                <Button type="submit" className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-4 text-lg">
-                  お問い合わせ内容を確認する
-                </Button>
-              </div>
-            </form>
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">無料相談を承ります</h2>
+          <div className="max-w-2xl mx-auto text-center">
+            <a href="/free-consultation" className="inline-block bg-blue-600 text-white py-4 px-8 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors text-lg font-semibold">
+              無料相談する
+            </a>
           </div>
         </section>
       </div>

@@ -82,7 +82,7 @@ export default async function Home() {
                   link="/services/web-production-package"
                 />
                 <ServiceCard
-                  title="Web制作・月額ライトプラン"
+                  title="Web制作・月額プラン"
                   description="月額固定料金でWebサイトの制作・運用・保守を継続的にサポート。EC機能を除く一般的なWebサイト向けのプランで、安心の保守体制を提供します。"
                   icon="repeat"
                   link="/services/web-production-lite"

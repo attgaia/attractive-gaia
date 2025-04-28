@@ -120,6 +120,16 @@ const EcConsultingPage = () => {
           </div>
         </section>
       </div>
+
+      {/* 4. 無料相談セクション */}
+      <section className="text-center bg-gradient-to-r from-orange-600 to-orange-500 rounded-lg p-10 md:p-16">
+        <h2 className="text-3xl font-bold text-white mb-6">無料相談を承ります</h2>
+        <div className="max-w-2xl mx-auto text-center">
+          <a href="/free-consultation" className="inline-block bg-white text-orange-600 py-4 px-8 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-colors text-lg font-semibold">
+            無料相談する
+          </a>
+        </div>
+      </section>
     </div>
   );
 };

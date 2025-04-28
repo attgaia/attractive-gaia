@@ -6,6 +6,11 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { BadgeCheck, Zap, MessageSquare, Eye, Heart, FileText, CheckSquare, CheckCircle, Palette, Sparkles, Layers, MessageCircle, Video, Globe } from 'lucide-react';
 import { ContactForm } from "@/components/contact-form"
 
+export const metadata: Metadata = {
+  title: "漫画LP・バナー制作 | ATTRACTIVEGAIA（アトラクティブガイア）",
+  description: "ATTRACTIVEGAIAでは、訴求力の高い漫画LP（ランディングページ）やバナー広告の制作をサポート。漫画を活用したクリエイティブで集客力とコンバージョン率向上を実現します。",
+};
+
 const MangaLpBannerPage = () => {
   return (
     <div className="container mx-auto py-12 md:py-20">
@@ -173,14 +178,11 @@ const MangaLpBannerPage = () => {
 
       {/* CTAセクション */}
       <section className="text-center bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg p-10 md:p-16">
-        <h2 className="text-3xl font-bold text-white mb-6">📞 まずは無料相談から</h2>
-        <p className="text-emerald-100 mb-4">"どんな内容でもマンガにできますか？""イメージが湧かない…"</p>
-        <p className="text-emerald-100 mb-8 max-w-xl mx-auto">
-          そんな方も大歓迎。まずは気軽にご相談ください！
-          下記フォームより必要事項をご記入の上お送りください。
-        </p>
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 md:p-12">
-          <ContactForm />
+        <h2 className="text-3xl font-bold text-white mb-6">無料相談を承ります</h2>
+        <div className="max-w-2xl mx-auto">
+          <a href="/free-consultation" className="inline-block bg-white text-emerald-600 py-4 px-8 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition-colors text-lg font-semibold">
+            無料相談する
+          </a>
         </div>
       </section>
     </div>
