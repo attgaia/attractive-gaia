@@ -12,7 +12,7 @@ export default function ArticleDetail() {
   useEffect(() => {
     async function fetchPostAndAuthor() {
       try {
-        const res = await fetch(`https://attgaia.com/wp-json/wp/v2/posts?slug=${slug}&_embed`);
+        const res = await fetch(`https://blog.attgaia.com/wp-json/wp/v2/posts?slug=${slug}&_embed`);
         const data = await res.json();
 
         if (data.length > 0) {
@@ -20,12 +20,12 @@ export default function ArticleDetail() {
           setPost(postData);
 
           // 著者情報取得
-          const authorRes = await fetch(`https://attgaia.com/wp-json/wp/v2/users/${postData.author}`);
+          const authorRes = await fetch(`https://blog.attgaia.com/wp-json/wp/v2/users/${postData.author}`);
           const authorData = await authorRes.json();
           setAuthor(authorData);
 
           // 🔻関連記事の取得は一時停止（エラー防止のため）🔻
-          // const relatedRes = await fetch(`https://attgaia.com/wp-json/wp/v2/posts?author=${postData.author}&per_page=3`);
+          // const relatedRes = await fetch(`https://blog.attgaia.com/wp-json/wp/v2/posts?author=${postData.author}&per_page=3`);
           // const relatedData = await relatedRes.json();
           // setRelatedPosts(relatedData.filter(p => p.id !== postData.id));
         }

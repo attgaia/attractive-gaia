@@ -1,6 +1,6 @@
 import { GraphQLClient, gql } from 'graphql-request';
 
-const endpoint = 'https://attgaia.com/graphql';
+const endpoint = 'https://blog.attgaia.com/graphql';
 const graphQLClient = new GraphQLClient(endpoint);
 
 // ✅ データの型を定義
