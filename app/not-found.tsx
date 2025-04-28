@@ -1,8 +1,12 @@
-'use client';
-
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '404 - ページが見つかりません | ATTRACTIVEGAIA',
+  description: 'お探しのページが見つかりませんでした。',
+};
 
 export default function NotFound() {
   return (
