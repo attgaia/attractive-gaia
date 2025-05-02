@@ -42,14 +42,13 @@ const CommercialTransactionPage = () => {
                   <ul className="list-disc pl-6">
                     <li>消費税</li>
                     <li>銀行振込手数料（お客様負担）</li>
-                    <li>クレジットカード決済手数料（当社負担）</li>
                   </ul>
                 </td>
               </tr>
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50">商品引渡し時期</th>
                 <td className="py-4 px-4">
-                  ご注文後、お支払い確認後7営業日以内に納品いたします。<br />
+                  ご注文後、お支払い確認後7営業日以内に発送いたします。<br />
                   ただし、商品の特性上、納期が異なる場合は事前にご連絡いたします。
                 </td>
               </tr>
@@ -83,7 +82,6 @@ const CommercialTransactionPage = () => {
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50">引渡し時期</th>
                 <td className="py-4 px-4">
-                  在庫がある場合は、ご注文後3営業日以内に発送いたします。<br />
                   在庫切れの場合は、入荷次第発送いたします。
                 </td>
               </tr>
@@ -101,7 +99,7 @@ const CommercialTransactionPage = () => {
               <tr className="border-b">
                 <th className="py-4 px-4 text-left bg-gray-50">役務または商品の引渡し時期</th>
                 <td className="py-4 px-4">
-                  ご注文後、お支払い確認後7営業日以内に納品いたします。<br />
+                  ご注文後、お支払い確認後7営業日以内に発送いたします。<br />
                   ただし、商品の特性上、納期が異なる場合は事前にご連絡いたします。
                 </td>
               </tr>
@@ -110,7 +108,7 @@ const CommercialTransactionPage = () => {
 
           <p className="text-gray-600 mt-8">
             制定日：2025年4月23日<br />
-            最終更新日：2025年4月23日
+            最終更新日：2025年5月2日
           </p>
         </div>
       </div>
