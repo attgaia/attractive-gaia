@@ -73,7 +73,7 @@ async function fetchArticles(): Promise<Article[]> {
 }
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://attractive-gaia.vercel.app'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://attgaia.com'
   
   // 静的ページのURLを生成
   const staticUrls = staticPages.map(path => `
