@@ -1,6 +1,6 @@
 // lib/data.tsx
 import { LucideProps } from "lucide-react";
-import { Brain, PenTool, Image, Layout, ShoppingCart, MapPin, Code, MessageSquare, Globe, Star, Languages, FileText, Package, Recycle } from "lucide-react";
+import { Brain, PenTool, Image, Layout, ShoppingCart, MapPin, Code, MessageSquare, Globe, Star, Languages, FileText, Package, Recycle, Repeat } from "lucide-react";
 import { ComponentType } from "react";
 
 export type ServiceItem = {
@@ -18,6 +18,24 @@ export const services: ServiceItem[] = [
     href: "/services/ai-consulting"
   },
   {
+    title: "Web制作一括請負サービス",
+    description: "企画からデザイン、開発、運用までワンストップで提供するWeb制作サービス",
+    icon: Layout,
+    href: "/services/web-production-package"
+  },
+  {
+    title: "Web制作・月額プラン",
+    description: "月額固定料金でWebサイトの制作・運用・保守を継続的にサポート",
+    icon: Repeat,
+    href: "/services/web-production-lite"
+  },
+  {
+    title: "Webのお医者さん",
+    description: "Webサイトの診断と改善提案",
+    icon: Code,
+    href: "/services/web-doctor"
+  },
+  {
     title: "記事作成",
     description: "SEOを考慮した高品質な記事作成サービス",
     icon: PenTool,
@@ -30,12 +48,6 @@ export const services: ServiceItem[] = [
     href: "/services/manga-lp-banner"
   },
   {
-    title: "Web制作パッケージ",
-    description: "包括的なWebサイト制作サービス",
-    icon: Layout,
-    href: "/services/web-production-package"
-  },
-  {
     title: "ECコンサルティング",
     description: "ECサイトの構築と運用支援",
     icon: ShoppingCart,
@@ -46,12 +58,6 @@ export const services: ServiceItem[] = [
     description: "地域の活性化を促進する支援サービス",
     icon: MapPin,
     href: "/services/regional-revitalization"
-  },
-  {
-    title: "Webドクター",
-    description: "Webサイトの診断と改善提案",
-    icon: Code,
-    href: "/services/web-doctor"
   },
   {
     title: "輸入コンサルティング",
